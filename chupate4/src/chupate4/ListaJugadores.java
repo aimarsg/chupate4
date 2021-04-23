@@ -3,13 +3,16 @@ package chupate4;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import prueba.Jugador;
+import prueba.ListaJugadores;
+
 public class ListaJugadores {
 	private ArrayList<Jugador> lista;
 	private static ListaJugadores miListaJugadores=null;
 	private static int idJugadorActual;
 	private boolean sentido=true;
 	
-	public ListaJugadores(int pIdJugadorActual) {
+	public ListaJugadores() {
 		this.lista=new ArrayList<Jugador>();
 	}
 	private Iterator<Jugador> getIterator(){
@@ -40,6 +43,47 @@ public class ListaJugadores {
 		}
 		return(j);
 		
+	}
+	public void jugarPartida() {
+		Jugador j;
+		boolean terminar=false;
+		while (!terminar) {
+			j=this.buscarJugadorPorId((ListaJugadores.idJugadorActual) % this.cantidadJugadores());
+			terminar=j.jugarTurno();
+			if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
+				ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual+1;
+			}
+			else {
+				ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual-1;
+			}
+		}
+	}
+	public void repartir() {
+		Iterator <Jugador> itr=this.getIterator();
+		Jugador j;
+		while (itr.hasNext()) {
+			j=itr.next();
+			j.cogerCarta(7);
+		}
+	}
+	public int cantidadJugadores() {
+		return(this.lista.size());
+	}
+	public static ListaJugadores getMiListaJugadores() {
+		if (ListaJugadores.miListaJugadores==null) {
+			ListaJugadores.miListaJugadores=new ListaJugadores();
+		}
+		return(ListaJugadores.miListaJugadores);
+	}
+	public Jugador siguienteJugador() {
+		int id;
+		if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
+			id=ListaJugadores.idJugadorActual+1;
+		}
+		else {
+			id=ListaJugadores.idJugadorActual-1;
+		}
+		return(this.buscarJugadorPorId(id));
 	}
 	
 }
