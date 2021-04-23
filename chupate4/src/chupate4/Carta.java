@@ -15,8 +15,6 @@ public abstract class Carta {
 		int nCarta= Baraja.getMiBaraja().listaEchadas.cantidadCartas;
 		if(Baraja.getMiBaraja().listaEchadas.get(nCarta).tieneMismoColor(this)) {
 			puede=true;
-		}else if(this instanceof CartaNormal && Baraja.getMiBaraja().listaEchadas.get(nCarta).tieneMismoNumero(this)) {
-			puede=true;
 		}
 		return puede;
 	}
@@ -29,9 +27,7 @@ public abstract class Carta {
 		this.color=pColor;
 	}
 	
-	public void escribirCarta() {
-		
-	}
+	public abstract void escribirCarta();
 	
 	public void tirarCarta() {
 		Baraja.getMiBaraja().listaEchadas.anadirCarta(this);
@@ -47,5 +43,13 @@ public abstract class Carta {
 	
 	public abstract boolean tieneMismoNumero(Carta pCarta);
 		
-	public abstract boolean tieneMismoNumero()
+	public abstract boolean tieneMismoNumero(int pNum);
+	
+	public boolean tieneMismoColor(String pColor) {
+		boolean tiene=false;
+		if(this.color==pColor) {
+			tiene=true;
+		}
+		return tiene;
+	}
 }
