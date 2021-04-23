@@ -3,9 +3,6 @@ package chupate4;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import prueba.Jugador;
-import prueba.ListaJugadores;
-
 public class ListaJugadores {
 	private ArrayList<Jugador> lista;
 	private static ListaJugadores miListaJugadores=null;
