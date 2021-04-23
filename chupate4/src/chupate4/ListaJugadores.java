@@ -1,5 +1,12 @@
 package chupate4;
 
-public class ListaJugadores {
+import java.util.ArrayList;
 
+public class ListaJugadores {
+	private ArrayList<Jugador> lista;
+	private static ListaJugadores miListaJugadores=null;
+	private static int idJugadorActual;
+	
+	
+	
 }
