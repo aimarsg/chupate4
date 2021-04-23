@@ -55,7 +55,7 @@ public class ListaJugadores {
 			}
 		}
 	}
-	public void repartir() {
+	public void repartir() {//hubhub
 		Iterator <Jugador> itr=this.getIterator();
 		Jugador j;
 		while (itr.hasNext()) {
