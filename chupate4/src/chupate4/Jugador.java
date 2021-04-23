@@ -27,12 +27,14 @@ public class Jugador {
 	}
 	
 	public void tirarCarta() {
-
+		String cartaString;
 		Carta carta;
-		carta= this.mano.buscarCarta(Teclado.getMiTeclado().leerString());
+		cartaString=Teclado.getMiTeclado().leerString();
+		carta= this.mano.buscarCarta(cartaString);
 		if (carta.sePuedeEchar()) {
 			Baraja.getMiBaraja().echarCarta(carta);
 			this.mano.eliminarCarta(carta);
+			this.decirUno(cartaString);
 		}
 	}
 	
@@ -47,6 +49,10 @@ public class Jugador {
 	
 	public int cantidadCartas() {
 		return(this.mano.cantidadCartas());
+	}
+	
+	public boolean puedeEcharCarta() {
+		this.mano.puedeEcharCarta();
 	}
 	
 }
