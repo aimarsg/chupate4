@@ -39,7 +39,23 @@ public class Jugador {
 	}
 	
 	// completar
-	public void decirUno() {
+	public void decirUno(String pString) {
+	//comprobar a ver si es la penultima carta
+	if (this.mano.cantidadCartas()==1) {
+		int cont=0;
+		int contEspacio=0;
+		while (cont<pString.length() && contEspacio!=2) {
+			if (pString.charAt(cont)==' ') {
+					contEspacio=contEspacio+1;
+			}
+			cont=cont+1;
+		}
+		if ((pString.charAt(cont)=='u'||pString.charAt(cont)=='U')&&(pString.charAt(cont+1)=='n'||pString.charAt(cont+1)=='N')&&(pString.charAt(cont+2)=='O'||pString.charAt(cont+2)=='o')) {
+			System.out.println("Ha dicho UNO");
+		}else {
+			this.cogerCarta(2);
+			}
+		}
 		
 	}
 	
