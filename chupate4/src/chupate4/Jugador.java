@@ -1,6 +1,7 @@
 package chupate4;
 
 public class Jugador {
+
 	private int nombre;
 	private ListaCartas mano;
 	private int idJugador;
