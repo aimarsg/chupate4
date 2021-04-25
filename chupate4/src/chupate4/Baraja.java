@@ -1,8 +1,5 @@
 package chupate4;
 
-import org.pmoo.packlaboratorio7.Baraja;
-import org.pmoo.packlaboratorio7.Carta;
-
 public class Baraja {
 	//Atributos
 	private ListaCartas listaInicial;
