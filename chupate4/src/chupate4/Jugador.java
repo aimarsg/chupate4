@@ -67,6 +67,10 @@ public class Jugador {
 		return(this.mano.cantidadCartas());
 	}
 	
+	public boolean tieneEsteId(int pId) {
+		return(this.idJugador==pId);
+	}
+	
 	public boolean puedeEcharCarta() {
 		this.mano.puedeEcharCarta();
 	}
