@@ -1,5 +1,8 @@
 package chupate4;
 
+import org.pmoo.packlaboratorio7.Baraja;
+import org.pmoo.packlaboratorio7.Carta;
+
 public class Baraja {
 	//Atributos
 	private ListaCartas listaInicial;
@@ -62,4 +65,26 @@ public class Baraja {
         this.listaEchadas.anadirCarta(ulti);
         this.listaInicial.eliminarCarta(ulti);
     }
+    
+    public Carta robar() {
+		Carta carta;
+		
+		if (this.listaInicial.cantidadCartas()==0) {
+			Baraja.getMiBaraja().darVueltaCartas();
+		}
+		
+		carta= this.listaInicial.ultimaCarta();
+		this.listaInicial.eliminarCarta(carta);
+		
+		return(carta);
+	}
+	
+	public void echarCarta(Carta pCarta) {
+		this.listaEchadas.anadirCarta(Carta);
+		pCarta.tirarCarta();
+	}
+	
+	public Carta ultimaCarta() {
+		this.listaEchadas.ultimaCarta();
+	}
 }
