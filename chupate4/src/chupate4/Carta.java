@@ -12,8 +12,8 @@ public abstract class Carta {
 	//métodos
 	public boolean sePuedeEchar() {
 		boolean puede=false;
-		int nCarta= Baraja.getMiBaraja().listaEchadas.cantidadCartas;
-		if(Baraja.getMiBaraja().listaEchadas.get(nCarta).tieneMismoColor(this)) {
+		
+		if(Baraja.getMiBaraja().ultimaCarta().tieneMismoColor(this)) {
 			puede=true;
 		}
 		return puede;
@@ -29,10 +29,8 @@ public abstract class Carta {
 	
 	public abstract void escribirCarta();
 	
-	public void tirarCarta() {
-		Baraja.getMiBaraja().listaEchadas.anadirCarta(this);
-	}
-	
+	public abstract void tirarCarta(); // este metodo lo que hace es realizar las acciones que desencadena tirar esa carta. Cambio de sentido, bloquear...
+
 	public boolean tieneMismoColor(Carta pCarta) {
 		boolean mismo=false;
 		if(this.color==pCarta.getColor()) {
