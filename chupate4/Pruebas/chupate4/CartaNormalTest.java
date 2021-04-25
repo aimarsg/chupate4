@@ -10,7 +10,7 @@ class CartaNormalTest {
 	CartaNormal c1;
 	@BeforeEach
 	void setUp() throws Exception {
-		c1=new CartaNormal("azul",8);
+		c1=new CartaNormal("azul",7);
 	}
 
 	@AfterEach
