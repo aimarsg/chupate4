@@ -6,7 +6,7 @@ import java.util.Iterator;
 public class ListaJugadores {
 	private ArrayList<Jugador> lista;
 	private static ListaJugadores miListaJugadores=null;
-	private static int idJugadorActual;
+	private static int idJugadorActual=0;
 	private boolean sentido=true;
 	
 	public ListaJugadores() {
@@ -47,6 +47,10 @@ public class ListaJugadores {
 		while (!terminar) {
 			j=this.buscarJugadorPorId((ListaJugadores.idJugadorActual) % this.cantidadJugadores());
 			terminar=j.jugarTurno();
+			if (terminar) {
+				Baraja.getMiBaraja().terminarPartida();
+				System.out.println("Ha ganado "+j.getNombre());
+			}
 			if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
 				ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual+1;
 			}
@@ -75,10 +79,10 @@ public class ListaJugadores {
 	public Jugador siguienteJugador() {
 		int id;
 		if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
-			id=ListaJugadores.idJugadorActual+1;
+			id=(ListaJugadores.idJugadorActual+1) % this.cantidadJugadores();
 		}
 		else {
-			id=ListaJugadores.idJugadorActual-1;
+			id=(ListaJugadores.idJugadorActual-1) % this.cantidadJugadores();
 		}
 		return(this.buscarJugadorPorId(id));
 	}

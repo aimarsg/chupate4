@@ -2,13 +2,13 @@ package chupate4;
 
 public class Jugador {
 
-	private int nombre;
+	private String nombre;
 	private ListaCartas mano;
 	private int idJugador;
 	
 	
 	//constructora
-	public Jugador(int pNombre, int pIdJugador) {
+	public Jugador(String pNombre, int pIdJugador) {
 		this.nombre= pNombre;
 		this.idJugador= pIdJugador;
 		this.mano= new ListaCartas();
@@ -29,12 +29,22 @@ public class Jugador {
 	public void tirarCarta() {
 		String cartaString;
 		Carta carta;
-		cartaString=Teclado.getMiTeclado().leerString();
-		carta= this.mano.buscarCarta(cartaString);
-		if (carta.sePuedeEchar()) {
-			Baraja.getMiBaraja().echarCarta(carta);
-			this.mano.eliminarCarta(carta);
-			this.decirUno(cartaString);
+		boolean tirada=false;
+		while (!tirada) {
+			cartaString=Teclado.getMiTeclado().leerString();
+			carta= this.mano.buscarCarta(cartaString);
+			if (carta!=null) {
+				if (carta.sePuedeEchar()) {
+					tirada=true;
+					Baraja.getMiBaraja().echarCarta(carta);
+					this.mano.eliminarCarta(carta);
+					this.decirUno(cartaString);
+				}else {
+					System.out.println("Esa carta no se puede tirar.");
+				}
+			}else {
+				System.out.println("La carta introducida no está en tu mano. Escribe otra.");
+			}
 		}
 	}
 	
@@ -73,6 +83,24 @@ public class Jugador {
 	
 	public boolean puedeEcharCarta() {
 		return(this.mano.puedeEcharCarta());
+	}
+	
+	public boolean jugarTurno() {
+		this.escribirMano();
+		if (!this.puedeEcharCarta()) {
+			this.cogerCarta(1);
+		}
+		if (this.puedeEcharCarta()) {
+			this.tirarCarta();
+		}
+		if (this.mano.cantidadCartas()==0) {
+			return(true);
+		}else {
+			return(false);
+		}
+	}
+	public String getNombre() {
+		return(this.nombre);
 	}
 	
 }
