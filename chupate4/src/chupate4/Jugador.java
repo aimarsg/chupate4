@@ -20,7 +20,7 @@ public class Jugador {
 		int i = 1;
 		Carta carta;
 		while (i<=pCuantas) {
-			carta= Baraja.getMiBaraja().robar;
+			carta= Baraja.getMiBaraja().robar();
 			this.mano.anadirCarta(carta);
 		}
 		

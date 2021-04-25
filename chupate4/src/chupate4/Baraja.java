@@ -80,7 +80,7 @@ public class Baraja {
 	}
 	
 	public void echarCarta(Carta pCarta) {
-		this.listaEchadas.anadirCarta(Carta);
+		this.listaEchadas.anadirCarta(pCarta);
 		pCarta.tirarCarta();
 	}
 	
