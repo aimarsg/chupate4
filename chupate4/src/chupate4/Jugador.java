@@ -72,7 +72,7 @@ public class Jugador {
 	}
 	
 	public boolean puedeEcharCarta() {
-		this.mano.puedeEcharCarta();
+		return(this.mano.puedeEcharCarta());
 	}
 	
 }
