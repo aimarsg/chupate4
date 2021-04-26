@@ -41,10 +41,10 @@ public abstract class Carta {
 	}
 	
 	
-	public abstract boolean tieneMismoNumero(Carta pCarta);
+
 		
-	public abstract boolean tieneMismoNumeroString(String pString);
-	public abstract boolean tieneMismoNumeroInt(int pNum);
+	public abstract boolean tieneMismoNumero(String pString);
+	
 	
 	
 	public boolean tieneMismoColor(String pColor) {

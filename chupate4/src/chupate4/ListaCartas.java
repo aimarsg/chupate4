@@ -80,7 +80,7 @@ public Carta buscarCarta(String pString) {
 		while (itr.hasNext()&&!enc) {
 			cartaAux=itr.next();
 			if(cartaAux.tieneMismoColor(color)) {
-				if(cartaAux.tieneMismoNumeroString(numero)) {
+				if(cartaAux.tieneMismoNumero(numero)) {
 					enc=true;
 				}
 			}

@@ -12,9 +12,9 @@ public class ListaCartasTest {
 	@Before
 	public void setUp() throws Exception {
 		l1=new ListaCartas();
-		c1=new CartaNormal("azul",1);
-		c2=new CartaNormal("amarillo",3);
-		c3=new CartaNormal("amarillo",5);
+		c1=new CartaNormal("azul","1");
+		c2=new CartaNormal("amarillo","3");
+		c3=new CartaNormal("amarillo","5");
 		l1.anadirCarta(c1);
 		l1.anadirCarta(c2);
 		l1.anadirCarta(c3);

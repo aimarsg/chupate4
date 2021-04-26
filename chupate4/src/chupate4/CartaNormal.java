@@ -2,11 +2,11 @@ package chupate4;
 
 public class CartaNormal extends Carta{
 	//atributos
-	private int numero;
+	private String numero;
 
 	
 	//constructora
-	public CartaNormal(String pColor,int pNumero) {
+	public CartaNormal(String pColor,String pNumero) {
 		super(pColor);
 		this.numero=pNumero;
 	}
@@ -14,7 +14,7 @@ public class CartaNormal extends Carta{
 	//métodos
 	public boolean sePuedeEchar() {
 		boolean puede=false;
-		Carta ultimaCarta= Baraja.getMiBaraja().listaEchadas.ultimaCarta();
+		Carta ultimaCarta= Baraja.getMiBaraja().ultimaCarta();
 		if(this.getColor()==ultimaCarta.getColor()) {
 			puede=true;
 		}if(ultimaCarta instanceof CartaNormal && ultimaCarta.tieneMismoNumero(this.numero)) {
@@ -111,25 +111,25 @@ public class CartaNormal extends Carta{
 		 while(k<=6) {
 			 
 		 
-			if(this.numero==0) {
+			if(this.numero=="0") {
 				System.out.println( cero[k]);
-				}else if(this.numero==1) {
+				}else if(this.numero=="1") {
 					System.out.println(uno[k]);
-				}else if(this.numero==2) {
+				}else if(this.numero=="2") {
 					System.out.println(dos[k]);	
-				}else if(this.numero==3) {
+				}else if(this.numero=="3") {
 					System.out.println(tres[k]);
-				}else if(this.numero==4) {
+				}else if(this.numero=="4") {
 					System.out.println(cuatro[k]);
-				}else if(this.numero==5) {
+				}else if(this.numero=="5") {
 					System.out.println(cinco[k]);
-				}else if(this.numero==6) {
+				}else if(this.numero=="6") {
 					System.out.println(seis[k]);
-				}else if(this.numero==7) {
+				}else if(this.numero=="7") {
 					System.out.println(siete[k]);
-				}else if(this.numero==8) {
+				}else if(this.numero=="8") {
 					System.out.println(ocho[k]);
-				}else if(this.numero==9) {
+				}else if(this.numero=="9") {
 					System.out.println(nueve[k]);
 		}
 			System.out.println("");
@@ -138,26 +138,20 @@ public class CartaNormal extends Carta{
 		 System.out.println("");
 		 
 	}
-	public boolean tieneMismoNumeroString(String pString) {
+	public boolean tieneMismoNumero(String pString) {
 		
 		boolean mismo=false;
-		int num=Integer.parseInt(pString);
-		if(this.numero==num) {
-			mismo=true;
-		}
-		return mismo;
-	}
-	public boolean tieneMismoNumeroInt(int pNum) {
-		boolean mismo=false;
-		if(this.numero==pNum) {
+		
+		if(this.numero.equals(pString)) {
 			mismo=true;
 		}
 		return mismo;
 	}
 	
-	public boolean tieneMismoNumero(Carta pCarta) {
+	
+	public boolean tieneMismoNumCarta(Carta pCarta) {
 		boolean mismo=false;
-		if (pCarta instanceof CartaNormal && (((CartaNormal)pCarta).tieneMismoNumeroInt(this.numero))) {
+		if (pCarta instanceof CartaNormal && (((CartaNormal)pCarta).tieneMismoNumero(this.numero))) {
 				mismo=true;
 			}
 		return mismo;
