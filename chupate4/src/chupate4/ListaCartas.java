@@ -68,11 +68,11 @@ public Carta buscarCarta(String pString) {
 		}
 		System.out.println(numero);
 		
-		int numero1=Integer.parseInt(numero);
-		CartaNormal carta1=new CartaNormal(color, numero1);
-		carta1.escribirCarta();
-		//System.out.println(carta1.getColor());
-		//return(carta1);
+		//int numero1=Integer.parseInt(numero);
+		//CartaNormal carta1=new CartaNormal(color, numero1);
+		//carta1.escribirCarta();
+		
+	
 		
 		Iterator <Carta> itr= this.getIterador();
 		Carta cartaAux=null;
@@ -80,7 +80,7 @@ public Carta buscarCarta(String pString) {
 		while (itr.hasNext()&&!enc) {
 			cartaAux=itr.next();
 			if(cartaAux.tieneMismoColor(color)) {
-				if(cartaAux.tieneMismoNumero(numero1)) {
+				if(cartaAux.tieneMismoNumeroString(numero)) {
 					enc=true;
 				}
 			}

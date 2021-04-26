@@ -138,9 +138,18 @@ public class CartaNormal extends Carta{
 		 System.out.println("");
 		 
 	}
-	public boolean tieneMismoNumero(int pNumero) {
+	public boolean tieneMismoNumeroString(String pString) {
+		
 		boolean mismo=false;
-		if(this.numero==pNumero) {
+		int num=Integer.parseInt(pString);
+		if(this.numero==num) {
+			mismo=true;
+		}
+		return mismo;
+	}
+	public boolean tieneMismoNumeroInt(int pNum) {
+		boolean mismo=false;
+		if(this.numero==pNum) {
 			mismo=true;
 		}
 		return mismo;
@@ -148,7 +157,7 @@ public class CartaNormal extends Carta{
 	
 	public boolean tieneMismoNumero(Carta pCarta) {
 		boolean mismo=false;
-		if (pCarta instanceof CartaNormal && (pCarta.tieneMismoNumero(this.numero))) {
+		if (pCarta instanceof CartaNormal && (((CartaNormal)pCarta).tieneMismoNumeroInt(this.numero))) {
 				mismo=true;
 			}
 		return mismo;
