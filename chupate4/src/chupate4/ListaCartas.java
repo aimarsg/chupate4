@@ -32,17 +32,49 @@ public boolean puedeEcharCarta() {
 	Carta cartaAux=null;
 	while (itr.hasNext()&& !enc) {
 		cartaAux=itr.next();
-		if(cartaAux.tieneMismoColor(Baraja.ultimaCarta)||cartaAux.tieneMismoNumero(Baraja.ultimaCarta)) {
+		if(cartaAux.tieneMismoColor(Baraja.getMiBaraja().ultimaCarta())||cartaAux.tieneMismoNumero(Baraja.getMiBaraja().ultimaCarta())) {
 			enc=true;
 		}
 	
 	}
 	return(enc);
 }
-
-public Carta buscarCarta(string pString) {
-	
+public Carta ultimaCarta(){
+	return(this.lista.get(this.cantidadCartas()-1));
 }
+
+
+public Carta buscarCarta(String pString) {
+	
+	// color numero "negro 2"
+	
+	String color="";
+	String numero="";
+	int pos=0;
+	Character charActual=pString.charAt(pos);
+	
+	
+	
+		while (pString.charAt(pos) != ' ') {
+			color=color+pString.charAt(pos);
+			pos=pos+1;
+		}
+		pos=pos+1;
+		
+		while (pString.charAt(pos) !=' ') {
+			numero=numero+pString.charAt(pos);
+			pos=pos+1;
+		}
+		
+		int numero1=Integer.parseInt(numero);
+		CartaNormal carta1=new CartaNormal(color, numero1);
+		carta1.escribirCarta();
+		System.out.println(carta1.getColor());
+		return(carta1);
+		
+	}
+	
+
 
 
 

@@ -82,6 +82,6 @@ public class Baraja {
 	}
 	
 	public Carta ultimaCarta() {
-		this.listaEchadas.ultimaCarta();
+		return(this.listaEchadas.ultimaCarta());
 	}
 }
