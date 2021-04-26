@@ -14,7 +14,7 @@ public class CartaNormal extends Carta{
 	//métodos
 	public boolean sePuedeEchar() {
 		boolean puede=false;
-		Carta ultimaCarta= Baraja.getMiBaraja().listaEchadas.get(Baraja.getMiBaraja().listaEchadas.cantidadCartas());
+		Carta ultimaCarta= Baraja.getMiBaraja().listaEchadas.ultimaCarta();
 		if(this.getColor()==ultimaCarta.getColor()) {
 			puede=true;
 		}if(ultimaCarta instanceof CartaNormal && ultimaCarta.tieneMismoNumero(this.numero)) {
