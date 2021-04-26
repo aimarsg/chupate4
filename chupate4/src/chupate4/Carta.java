@@ -40,13 +40,15 @@ public abstract class Carta {
 		return mismo;
 	}
 	
+	
 	public abstract boolean tieneMismoNumero(Carta pCarta);
 		
 	public abstract boolean tieneMismoNumero(int pNum);
 	
+	
 	public boolean tieneMismoColor(String pColor) {
 		boolean tiene=false;
-		if(this.color==pColor) {
+		if(this.color.equals(pColor)) {
 			tiene=true;
 		}
 		return tiene;
