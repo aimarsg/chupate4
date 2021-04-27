@@ -102,5 +102,5 @@ public class ListaJugadores {
 			ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual-1;
 		}
 	}
-	
+
 }
