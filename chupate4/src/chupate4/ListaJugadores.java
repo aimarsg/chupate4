@@ -94,5 +94,13 @@ public class ListaJugadores {
 			this.sentido=true;
 		}
 	}
+	public void saltarTurno() {
+		if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
+			ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual+1;
+		}
+		else {
+			ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual-1;
+		}
+	}
 	
 }
