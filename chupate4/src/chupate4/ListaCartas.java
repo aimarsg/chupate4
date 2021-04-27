@@ -32,7 +32,7 @@ public boolean puedeEcharCarta() {
 	Carta cartaAux=null;
 	while (itr.hasNext()&& !enc) {
 		cartaAux=itr.next();
-		if(cartaAux.tieneMismoColor(Baraja.getMiBaraja().ultimaCarta())||cartaAux.tieneMismoNumero(Baraja.getMiBaraja().ultimaCarta())) {
+		if(cartaAux.tieneMismoColor(Baraja.getMiBaraja().ultimaCarta())||((cartaAux instanceof CartaNormal) && cartaAux.tieneMismoNumero(Baraja.getMiBaraja().ultimaCarta()))) {
 			enc=true;
 		}
 	

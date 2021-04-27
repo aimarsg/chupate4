@@ -41,7 +41,7 @@ public abstract class Carta {
 	}
 	
 	
-
+	public abstract boolean tieneMismoNumero(Carta pCarta);
 		
 	public abstract boolean tieneMismoNumero(String pString);
 	
