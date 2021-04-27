@@ -9,6 +9,7 @@ public class CambioSentido extends EspecialesColor{
 	}
 	public void escribirCarta() {
 		
+		
 	}
 	public boolean sePuedeEchar() {
 		boolean sePuede=true;
@@ -18,5 +19,8 @@ public class CambioSentido extends EspecialesColor{
 			}
 		}
 		return(sePuede);
+	}
+	public String devolverString() {
+		return("cambio de color "+super.getColor());
 	}
 }

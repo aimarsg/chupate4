@@ -29,7 +29,7 @@ public abstract class Carta {
 	
 	public abstract void escribirCarta();
 	
-	public abstract void devolverString();
+	public abstract String devolverString();
 	
 	public abstract void tirarCarta(); // este metodo lo que hace es realizar las acciones que desencadena tirar esa carta. Cambio de sentido, bloquear...
 
