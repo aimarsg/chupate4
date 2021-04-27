@@ -102,5 +102,8 @@ public class ListaJugadores {
 			ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual-1;
 		}
 	}
+	public void resetearListaJugadores() {
+		this.lista=new ArrayList<Jugador>();
+	}
 
 }
