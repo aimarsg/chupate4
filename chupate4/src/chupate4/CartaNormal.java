@@ -156,7 +156,11 @@ public class CartaNormal extends Carta{
 			}
 		return mismo;
 		}
-	
-	
+	public String devolverString() {
+		String pString="";
+		pString=this.numero;
+		pString=pString+" "+this.getColor();
+		return pString;
+		}
 	}
 

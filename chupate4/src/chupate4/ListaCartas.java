@@ -95,7 +95,18 @@ public Carta buscarCarta(String pString) {
 			return(cartaAux);
 		}
 	}
-	
+	public void escribirCartas() {
+		Iterator<Carta> itr=this.getIterador();
+		Carta cartaAux=null;
+		System.out.println("");
+		System.out.println("Estas son tus cartas:");
+		System.out.println("");
+		while (itr.hasNext()){
+			cartaAux=itr.next();
+			System.out.println(cartaAux.devolverString());
+			System.out.println("");
+			}
+		}
 
 
 
