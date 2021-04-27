@@ -15,10 +15,10 @@ public class CartaNormal extends Carta{
 	public boolean sePuedeEchar() {
 		boolean puede=false;
 		Carta ultimaCarta= Baraja.getMiBaraja().ultimaCarta();
-		if(this.getColor()==ultimaCarta.getColor()) {
-			puede=true;
-		}if(ultimaCarta instanceof CartaNormal && ultimaCarta.tieneMismoNumero(this.numero)) {
-			puede=true;
+		if(!super.sePuedeEchar()) {
+			if(ultimaCarta instanceof CartaNormal && ultimaCarta.tieneMismoNumero(this.numero)) {
+				puede=true;
+			}
 		}
 		return puede;
 	}
@@ -112,25 +112,25 @@ public class CartaNormal extends Carta{
 			 
 		 
 			if(this.numero=="0") {
-				System.out.println( cero[k]);
+				System.out.print( cero[k]);
 				}else if(this.numero=="1") {
-					System.out.println(uno[k]);
+					System.out.print(uno[k]);
 				}else if(this.numero=="2") {
-					System.out.println(dos[k]);	
+					System.out.print(dos[k]);	
 				}else if(this.numero=="3") {
-					System.out.println(tres[k]);
+					System.out.print(tres[k]);
 				}else if(this.numero=="4") {
-					System.out.println(cuatro[k]);
+					System.out.print(cuatro[k]);
 				}else if(this.numero=="5") {
-					System.out.println(cinco[k]);
+					System.out.print(cinco[k]);
 				}else if(this.numero=="6") {
-					System.out.println(seis[k]);
+					System.out.print(seis[k]);
 				}else if(this.numero=="7") {
-					System.out.println(siete[k]);
+					System.out.print(siete[k]);
 				}else if(this.numero=="8") {
-					System.out.println(ocho[k]);
+					System.out.print(ocho[k]);
 				}else if(this.numero=="9") {
-					System.out.println(nueve[k]);
+					System.out.print(nueve[k]);
 		}
 			System.out.println("");
 			k++;
