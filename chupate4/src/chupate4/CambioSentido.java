@@ -21,6 +21,6 @@ public class CambioSentido extends EspecialesColor{
 		return(sePuede);
 	}
 	public String devolverString() {
-		return("cambio de color "+super.getColor());
+		return("cambio de sentido "+super.getColor());
 	}
 }
