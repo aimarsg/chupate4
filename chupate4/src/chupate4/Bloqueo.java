@@ -16,6 +16,10 @@ public class Bloqueo extends EspecialesColor{
 	public void escribirCarta() {
 
 	}
+	public String devolverString() {
+		return("bloqueo  "+super.getColor());
+	}
+	
 	public boolean sePuedeEchar() {
 		boolean puede =false;
 		if(!super.sePuedeEchar()) {

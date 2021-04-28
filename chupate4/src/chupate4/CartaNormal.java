@@ -12,12 +12,16 @@ public class CartaNormal extends Carta{
 	}
 	
 	//métodos
+	public void tirarCarta() {}
+	
 	public boolean sePuedeEchar() {
 		boolean puede=false;
-		Carta ultimaCarta= Baraja.getMiBaraja().ultimaCarta();
 		if(!super.sePuedeEchar()) {
-			if(ultimaCarta instanceof CartaNormal && ultimaCarta.tieneMismoNumero(this.numero)) {
-				puede=true;
+			Carta ultimaCarta= Baraja.getMiBaraja().ultimaCarta();
+			if(ultimaCarta instanceof CartaNormal) {
+				if (((CartaNormal)ultimaCarta).tieneMismoNumero(this.numero)) {
+					puede=true;
+				}
 			}
 		}
 		return puede;
@@ -148,11 +152,12 @@ public class CartaNormal extends Carta{
 		return mismo;
 	}
 	
-	
-	public boolean tieneMismoNumCarta(Carta pCarta) {
+	public boolean tieneMismoNumero(Carta pCarta) {
 		boolean mismo=false;
-		if (pCarta instanceof CartaNormal && (((CartaNormal)pCarta).tieneMismoNumero(this.numero))) {
+		if (pCarta instanceof CartaNormal) {
+			if (((CartaNormal)pCarta).tieneMismoNumero(this.numero)) {
 				mismo=true;
+				}
 			}
 		return mismo;
 		}
