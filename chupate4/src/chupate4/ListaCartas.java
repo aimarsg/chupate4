@@ -117,7 +117,7 @@ public Carta buscarCarta(String pString) {
 		System.out.println("");
 		while (itr.hasNext()){
 			cartaAux=itr.next();
-			System.out.println(cartaAux.devolverString());
+			cartaAux.escribirCarta();
 			System.out.println("");
 			}
 		}

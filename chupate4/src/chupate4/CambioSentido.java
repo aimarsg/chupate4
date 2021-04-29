@@ -1,4 +1,8 @@
 package chupate4;
+import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.AnsiConsole;
+import static org.fusesource.jansi.Ansi.Color.*;
+import static org.fusesource.jansi.Ansi.*;
 
 public class CambioSentido extends EspecialesColor{
 	public CambioSentido(String pColor) {
@@ -8,7 +12,18 @@ public class CambioSentido extends EspecialesColor{
 		ListaJugadores.getMiListaJugadores().cambiarSentido();
 	}
 	public void escribirCarta() {
-		
+		AnsiConsole.systemInstall();
+		if(super.getColor()=="rojo") {
+		 System.out.println(ansi().bg(Color.RED).a("⇔").reset());
+		}else if(super.getColor()=="amarillo") {
+			System.out.println(ansi().bg(Color.YELLOW).a("⇔").reset());
+		}else if(super.getColor()=="azul") {
+			System.out.println(ansi().bg(Color.BLUE).a("⇔").reset());
+		}else {
+			System.out.println(ansi().bg(Color.GREEN).a("⇔").reset());
+		}
+
+	        AnsiConsole.systemUninstall();
 		
 	}
 	public boolean sePuedeEchar() {
@@ -20,7 +35,5 @@ public class CambioSentido extends EspecialesColor{
 		}
 		return(sePuede);
 	}
-	public String devolverString() {
-		return("cambio de sentido "+super.getColor());
-	}
+	
 }
