@@ -1,5 +1,8 @@
 package chupate4;
+import static org.fusesource.jansi.Ansi.ansi;
+
 import org.fusesource.jansi.AnsiConsole;
+import org.fusesource.jansi.Ansi.Color;
 
 public class CartaCambioColor extends Carta{
 	//atributos
@@ -18,7 +21,12 @@ public class CartaCambioColor extends Carta{
 		return (super.sePuedeEchar());
 	}
 	public void escribirCarta() {
-		System.out.println("cambio color"+super.getColor());
+		AnsiConsole.systemInstall();
+		
+		 System.out.println(ansi().bg(Color.BLACK).a("C").reset());
+		
+
+	        AnsiConsole.systemUninstall();
 	}
 	
 	public void tirarCarta() {
