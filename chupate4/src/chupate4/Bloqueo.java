@@ -1,5 +1,9 @@
 package chupate4;
 
+import org.fusesource.jansi.AnsiConsole;
+import org.fusesource.jansi.Ansi;
+import static org.fusesource.jansi.Ansi.Color.*;
+import static org.fusesource.jansi.Ansi.*;
 
 public class Bloqueo extends EspecialesColor{
 
@@ -14,11 +18,24 @@ public class Bloqueo extends EspecialesColor{
 	}
 	
 	public void escribirCarta() {
+		AnsiConsole.systemInstall();
+		String c=this.getColor();
+		if (c.equals("azul")) {
+			System.out.println(ansi().bg(Color.BLUE).a("X").reset());
+		}else {
+			if (c.equals("verde")) {
+				System.out.println(ansi().bg(Color.GREEN).a("X").reset());
+			}else {
+				if (c.equals("rojo")) {
+					System.out.println(ansi().bg(Color.RED).a("X").reset());
+				}else {
+						System.out.println(ansi().bg(Color.YELLOW).a("X").reset());
+					}
+				}
+			}
+		AnsiConsole.systemUninstall();
+	}
 
-	}
-	public String devolverString() {
-		return("bloqueo  "+super.getColor());
-	}
 	
 	public boolean sePuedeEchar() {
 		boolean puede =false;
