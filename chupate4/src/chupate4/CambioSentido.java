@@ -9,6 +9,8 @@ public class CambioSentido extends EspecialesColor{
 		super(pColor);
 	}
 	public void tirarCarta() {
+		this.escribirCarta();
+		System.out.println("Se ha saltado cambiado el sentido");
 		ListaJugadores.getMiListaJugadores().cambiarSentido();
 	}
 	public void escribirCarta() {
