@@ -22,6 +22,8 @@ public class Jugador {
 		while (i<=pCuantas) {
 			carta= Baraja.getMiBaraja().robar();
 			this.mano.anadirCarta(carta);
+			
+			i=i+1;
 		}
 		
 	}

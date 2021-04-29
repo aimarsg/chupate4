@@ -42,6 +42,8 @@ public class Baraja {
 			String nombre=Teclado.getMiTeclado().leerString();
 			Jugador j=new Jugador(nombre, cont);
 			ListaJugadores.getMiListaJugadores().anadirJugador(j);
+			
+			cont=cont+1;
 		}
 	}
 	
