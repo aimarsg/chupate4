@@ -23,15 +23,15 @@ public class CartaCambioColor extends Carta{
 	public void escribirCarta() {
 		AnsiConsole.systemInstall();
 		if(super.getColor()=="rojo") {
-			 System.out.println(ansi().bg(Color.RED).a("C").reset());
+			 System.out.println(ansi().bg(Color.RED).a("C").reset()+" ");
 			}else if(super.getColor()=="amarillo") {
-				System.out.println(ansi().bg(Color.YELLOW).a("C").reset());
+				System.out.println(ansi().bg(Color.YELLOW).a("C").reset()+" ");
 			}else if(super.getColor()=="azul") {
-				System.out.println(ansi().bg(Color.BLUE).a("C").reset());
+				System.out.println(ansi().bg(Color.BLUE).a("C").reset()+" ");
 			}else if(super.getColor()=="verde"){
-				System.out.println(ansi().bg(Color.GREEN).a("C").reset());
+				System.out.println(ansi().bg(Color.GREEN).a("C").reset()+" ");
 			}else {
-				System.out.println(ansi().bg(Color.BLACK).a("C").reset());
+				System.out.println(ansi().bg(Color.BLACK).a("C").reset()+" ");
 	}
 
 	    AnsiConsole.systemUninstall();
