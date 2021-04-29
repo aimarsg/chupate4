@@ -29,8 +29,6 @@ public abstract class Carta {
 	
 	public abstract void escribirCarta();
 	
-	public abstract String devolverString();
-	
 	public abstract void tirarCarta(); // este metodo lo que hace es realizar las acciones que desencadena tirar esa carta. Cambio de sentido, bloquear...
 
 	public boolean tieneMismoColor(Carta pCarta) {
