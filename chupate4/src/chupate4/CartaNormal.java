@@ -20,7 +20,9 @@ public class CartaNormal extends Carta{
 	
 	//métodos
 	public void tirarCarta() {
+		System.out.println("[ ");
 		this.escribirCarta();
+		System.out.print("]");
 	}
 	
 	public boolean sePuedeEchar() {
@@ -40,13 +42,13 @@ public class CartaNormal extends Carta{
 		AnsiConsole.systemInstall();
 		
         if(super.getColor()=="rojo") {
-         System.out.println(ansi().bg(Color.RED).a(this.numero).reset()+" ");
+        	System.out.print(ansi().bg(Color.RED).a(this.numero).reset()+" ");
         }else if(super.getColor()=="amarillo") {
-            System.out.println(ansi().bg(Color.YELLOW).a(this.numero).reset()+" ");
+            System.out.print(ansi().bg(Color.YELLOW).a(this.numero).reset()+" ");
         }else if(super.getColor()=="azul") {
-            System.out.println(ansi().bg(Color.BLUE).a(this.numero).reset()+" ");
+            System.out.print(ansi().bg(Color.BLUE).a(this.numero).reset()+" ");
         }else {
-            System.out.println(ansi().bg(Color.GREEN).a(this.numero).reset()+" ");
+            System.out.print(ansi().bg(Color.GREEN).a(this.numero).reset()+" ");
         }
 
         AnsiConsole.systemUninstall();

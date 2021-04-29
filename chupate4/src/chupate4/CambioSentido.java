@@ -9,20 +9,22 @@ public class CambioSentido extends EspecialesColor{
 		super(pColor);
 	}
 	public void tirarCarta() {
+		System.out.println("[ ");
 		this.escribirCarta();
+		System.out.print("]");
 		System.out.println("Se ha cambiado el sentido");
 		ListaJugadores.getMiListaJugadores().cambiarSentido();
 	}
 	public void escribirCarta() {
 		AnsiConsole.systemInstall();
 		if(super.getColor()=="rojo") {
-		 System.out.println(ansi().bg(Color.RED).a("</>").reset()+" ");
+		 System.out.print(ansi().bg(Color.RED).a("</>").reset()+" ");
 		}else if(super.getColor()=="amarillo") {
-			System.out.println(ansi().bg(Color.YELLOW).a("</>").reset()+" ");
+			System.out.print(ansi().bg(Color.YELLOW).a("</>").reset()+" ");
 		}else if(super.getColor()=="azul") {
-			System.out.println(ansi().bg(Color.BLUE).a("</>").reset()+" ");
+			System.out.print(ansi().bg(Color.BLUE).a("</>").reset()+" ");
 		}else {
-			System.out.println(ansi().bg(Color.GREEN).a("</>").reset()+" ");
+			System.out.print(ansi().bg(Color.GREEN).a("</>").reset()+" ");
 		}
 
 	        AnsiConsole.systemUninstall();
