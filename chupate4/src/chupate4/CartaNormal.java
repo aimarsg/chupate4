@@ -1,6 +1,8 @@
 package chupate4;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
+import org.fusesource.jansi.Ansi.Color;
+
 import static org.fusesource.jansi.Ansi.Color.*;
 import static org.fusesource.jansi.Ansi.*;
 
@@ -34,8 +36,18 @@ public class CartaNormal extends Carta{
 	
 	public void escribirCarta() {
 		AnsiConsole.systemInstall();
-		//SystConsole.outem.out.println(ansi().eraseScreen().fg(RED).a("Hello").fg(GREEN).a(" World").reset() );
-	
+		
+        if(super.getColor()=="rojo") {
+         System.out.println(ansi().bg(Color.RED).a(this.numero).reset());
+        }else if(super.getColor()=="amarillo") {
+            System.out.println(ansi().bg(Color.YELLOW).a(this.numero).reset());
+        }else if(super.getColor()=="azul") {
+            System.out.println(ansi().bg(Color.BLUE).a(this.numero).reset());
+        }else {
+            System.out.println(ansi().bg(Color.GREEN).a(this.numero).reset());
+        }
+
+        AnsiConsole.systemUninstall();
 		 
 	}
 	public boolean tieneMismoNumero(String pString) {
