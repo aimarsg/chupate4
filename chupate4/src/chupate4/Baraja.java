@@ -89,6 +89,7 @@ public class Baraja {
 		int i=0;
 		CartaNormal c1,c2,c3,c4,c5,c6,c7,c8;
 		CambioSentido cs1,cs2,cs3,cs4;
+		CartaCambioColor cc1,cc2,cc3,cc4;
 		Bloqueo b1,b2,b3,b4;
 		while (i<10) {
 		c1=new CartaNormal("azul",String.valueOf(i));
@@ -107,6 +108,7 @@ public class Baraja {
 		Baraja.getMiBaraja().listaInicial.anadirCarta(c6);
 		Baraja.getMiBaraja().listaInicial.anadirCarta(c7);
 		Baraja.getMiBaraja().listaInicial.anadirCarta(c8);
+		i=i+1;
 		//falta a�adir las especiales
 		}
 		i=0;
@@ -121,6 +123,11 @@ public class Baraja {
 			cs3=new CambioSentido("rojo");
 			cs4=new CambioSentido("verde");
 			
+			cc1=new CartaCambioColor("negro");
+			cc2=new CartaCambioColor("negro");
+			cc3=new CartaCambioColor("negro");
+			cc4=new CartaCambioColor("negro");
+			
 			Baraja.getMiBaraja().listaInicial.anadirCarta(b1);
 			Baraja.getMiBaraja().listaInicial.anadirCarta(b2);
 			Baraja.getMiBaraja().listaInicial.anadirCarta(b3);
@@ -129,6 +136,12 @@ public class Baraja {
 			Baraja.getMiBaraja().listaInicial.anadirCarta(cs2);
 			Baraja.getMiBaraja().listaInicial.anadirCarta(cs3);
 			Baraja.getMiBaraja().listaInicial.anadirCarta(cs4);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cc1);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cc2);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cc3);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cc4);
+			
+			i=i+1;
 		}
 
 		}
@@ -145,4 +158,8 @@ public class Baraja {
 		Baraja.getMiBaraja().listaInicial=new ListaCartas();
 		ListaJugadores.getMiListaJugadores().resetearListaJugadores();
 		}
+	
+	public void escribirBaraja() {
+		this.listaInicial.escribirCartas();
+	}
 	}

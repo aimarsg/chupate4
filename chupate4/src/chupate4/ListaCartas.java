@@ -115,7 +115,7 @@ public Carta buscarCarta(String pString) {
 		System.out.println("");
 		System.out.println("Estas son tus cartas:");
 		System.out.println("");
-		System.out.println("[ ");
+		System.out.print("[ ");
 		while (itr.hasNext()){
 			cartaAux=itr.next();
 			cartaAux.escribirCarta();
