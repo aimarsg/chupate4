@@ -26,15 +26,15 @@ public class Bloqueo extends EspecialesColor{
 		AnsiConsole.systemInstall();
 		String c=this.getColor();
 		if (c.equals("azul")) {
-			System.out.print(ansi().bg(Color.BLUE).a("X").reset()+" ");
+			System.out.print(ansi().bg(Color.BLUE).a(" X ").reset()+" ");
 		}else {
 			if (c.equals("verde")) {
-				System.out.print(ansi().bg(Color.GREEN).a("X").reset()+" ");
+				System.out.print(ansi().bg(Color.GREEN).a(" X ").reset()+" ");
 			}else {
 				if (c.equals("rojo")) {
-					System.out.print(ansi().bg(Color.RED).a("X").reset()+" ");
+					System.out.print(ansi().bg(Color.RED).a(" X ").reset()+" ");
 				}else {
-						System.out.print(ansi().bg(Color.YELLOW).a("X").reset()+" ");
+						System.out.print(ansi().bg(Color.YELLOW).a(" X ").reset()+" ");
 					}
 				}
 			}
