@@ -46,7 +46,7 @@ public Carta ultimaCarta(){
 
 public Carta buscarCarta(String pString) {
 	
-	// color numero "negro 2"
+	// color numero "negro 2"// color 
 	
 	String color="";
 	String numero="";
@@ -80,9 +80,21 @@ public Carta buscarCarta(String pString) {
 		while (itr.hasNext()&&!enc) {
 			cartaAux=itr.next();
 			if(cartaAux.tieneMismoColor(color)) {
-				if(cartaAux instanceof CartaNormal) {
-					if(cartaAux.tieneMismoNumero(numero)){
+				if(numero=="cambio sentido") {
+					if(cartaAux instanceof CambioSentido){
 					enc=true;
+				}
+			}else if(numero=="bloqueo") {
+				if(cartaAux instanceof Bloqueo) {
+					enc=true;
+				}
+			}else if(numero=="cambio color") {
+				if(cartaAux instanceof CartaCambioColor) {
+					enc=true;
+				}else if(cartaAux instanceof CartaNormal){
+					if(((CartaNormal) cartaAux).tieneMismoNumero(numero)) {
+						enc=true;
+					}
 				}
 			}
 			
