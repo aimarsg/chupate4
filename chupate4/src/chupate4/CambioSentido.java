@@ -16,13 +16,13 @@ public class CambioSentido extends EspecialesColor{
 	public void escribirCarta() {
 		AnsiConsole.systemInstall();
 		if(super.getColor()=="rojo") {
-		 System.out.println(ansi().bg(Color.RED).a("⇔").reset());
+		 System.out.println(ansi().bg(Color.RED).a("</>").reset()+" ");
 		}else if(super.getColor()=="amarillo") {
-			System.out.println(ansi().bg(Color.YELLOW).a("⇔").reset());
+			System.out.println(ansi().bg(Color.YELLOW).a("</>").reset()+" ");
 		}else if(super.getColor()=="azul") {
-			System.out.println(ansi().bg(Color.BLUE).a("⇔").reset());
+			System.out.println(ansi().bg(Color.BLUE).a("</>").reset()+" ");
 		}else {
-			System.out.println(ansi().bg(Color.GREEN).a("⇔").reset());
+			System.out.println(ansi().bg(Color.GREEN).a("</>").reset()+" ");
 		}
 
 	        AnsiConsole.systemUninstall();
