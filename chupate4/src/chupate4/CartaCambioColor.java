@@ -22,17 +22,27 @@ public class CartaCambioColor extends Carta{
 	}
 	public void escribirCarta() {
 		AnsiConsole.systemInstall();
-		
-		 System.out.println(ansi().bg(Color.BLACK).a("C").reset());
-		
+		if(super.getColor()=="rojo") {
+			 System.out.println(ansi().bg(Color.RED).a("C").reset());
+			}else if(super.getColor()=="amarillo") {
+				System.out.println(ansi().bg(Color.YELLOW).a("C").reset());
+			}else if(super.getColor()=="azul") {
+				System.out.println(ansi().bg(Color.BLUE).a("C").reset());
+			}else if(super.getColor()=="verde"){
+				System.out.println(ansi().bg(Color.GREEN).a("C").reset());
+			}else {
+				System.out.println(ansi().bg(Color.BLACK).a("C").reset());
+	}
 
-	        AnsiConsole.systemUninstall();
+	    AnsiConsole.systemUninstall();
 	}
 	
 	public void tirarCarta() {
+		this.escribirCarta();
 		String nColor =this.preguntarColor();
 		super.setColor(nColor);
-		
+		this.escribirCarta();
+		System.out.println("Se ha cambiado el color a "+nColor);
 	}
 	
 }
