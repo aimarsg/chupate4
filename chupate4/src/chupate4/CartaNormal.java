@@ -1,4 +1,9 @@
 package chupate4;
+import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.AnsiConsole;
+import static org.fusesource.jansi.Ansi.Color.*;
+import static org.fusesource.jansi.Ansi.*;
+import static org.fusesource.jansi.Ansi.Color.*;
 
 public class CartaNormal extends Carta{
 	//atributos
@@ -28,7 +33,14 @@ public class CartaNormal extends Carta{
 	}
 	
 	public void escribirCarta() {
+		AnsiConsole.systemInstall();
+		//System.out.println(ansi().eraseScreen().fg(RED).a("Hello").fg(GREEN).a(" World").reset() );
+		//AnsiConsole.out().println("Hello World");
+
+		System.out.println(ansi().a(this.numero).bg(Color.RED).fg(Color.WHITE));
 		
+		AnsiConsole.systemUninstall();
+	
 	
 		String cero[]={" ##### ", // H=0
 					   " #   # ", // H=1
@@ -36,7 +48,13 @@ public class CartaNormal extends Carta{
                        " #   # ", // H=3
                        " #   # ", // H=4
                        " #   # ", // H=5
-                       " ##### "};// H=6
+                       " ##### ",
+		};// H=6
+		
+       
+
+                       
+		
 
  String uno[]={"   #   ",
                "  ##   ",
