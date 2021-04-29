@@ -18,7 +18,7 @@ public class CartaCambioColor extends Carta{
 		return (super.sePuedeEchar());
 	}
 	public void escribirCarta() {
-		
+		System.out.println("cambio color"+super.getColor());
 	}
 	
 	public void tirarCarta() {

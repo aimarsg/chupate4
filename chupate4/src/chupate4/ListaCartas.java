@@ -80,11 +80,13 @@ public Carta buscarCarta(String pString) {
 		while (itr.hasNext()&&!enc) {
 			cartaAux=itr.next();
 			if(cartaAux.tieneMismoColor(color)) {
-				if(cartaAux.tieneMismoNumero(numero)) {
+				if(cartaAux instanceof CartaNormal) {
+					if(cartaAux.tieneMismoNumero(numero)){
 					enc=true;
 				}
 			}
 			
+		}
 		}
 		if(!enc) {
 			System.out.println("no esta esa carta");
