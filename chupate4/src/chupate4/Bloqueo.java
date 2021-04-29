@@ -14,6 +14,7 @@ public class Bloqueo extends EspecialesColor{
 	}
 	
 	public void tirarCarta() {
+		this.escribirCarta();
 		String nombre=ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre();
 		System.out.println("Se ha saltado a "+nombre);
 		ListaJugadores.getMiListaJugadores().saltarTurno();
