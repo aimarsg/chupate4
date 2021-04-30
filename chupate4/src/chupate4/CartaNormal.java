@@ -26,8 +26,9 @@ public class CartaNormal extends Carta{
 	}
 	
 	public boolean sePuedeEchar() {
-		boolean puede=false;
+		boolean puede=true;
 		if(!super.sePuedeEchar()) {
+			puede=false;
 			Carta ultimaCarta= Baraja.getMiBaraja().ultimaCarta();
 			if(ultimaCarta instanceof CartaNormal) {
 				if (((CartaNormal)ultimaCarta).tieneMismoNumero(this.numero)) {

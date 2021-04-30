@@ -33,6 +33,7 @@ public class CambioSentido extends EspecialesColor{
 	public boolean sePuedeEchar() {
 		boolean sePuede=true;
 		if(!super.sePuedeEchar()) {
+			sePuede=false;
 			if (Baraja.getMiBaraja().ultimaCarta() instanceof CambioSentido) {
 				sePuede=true;
 			}
