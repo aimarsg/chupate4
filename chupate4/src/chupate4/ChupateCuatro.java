@@ -16,7 +16,7 @@ public class ChupateCuatro extends CartaCambioColor {
 		System.out.println("[ ");
 		this.escribirCarta();
 		System.out.print("]");
-		System.out.println("¡El siguiente jugador roba 4 cartas!");
+		System.out.println("ï¿½El siguiente jugador roba 4 cartas!");
 		ListaJugadores.getMiListaJugadores().siguienteJugador().cogerCarta(4);
 		String nColor=this.preguntarColor();
 		this.setColor(nColor);
@@ -51,9 +51,6 @@ public class ChupateCuatro extends CartaCambioColor {
 
 	    AnsiConsole.systemUninstall();
 	}
-	
-	public boolean sePuedeEchar() {
-		return (super.sePuedeEchar());
-	}
+
 }
 

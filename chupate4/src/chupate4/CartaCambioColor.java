@@ -18,7 +18,7 @@ public class CartaCambioColor extends Carta{
 		return color;
 	}
 	public boolean sePuedeEchar() {
-		return (super.sePuedeEchar());
+		return (true);
 	}
 	public void escribirCarta() {
 		AnsiConsole.systemInstall();
