@@ -43,7 +43,7 @@ public class JugadorTest {
 		ListaCartas l=new ListaCartas();
 		carta1=new ChupateCuatro("negro");
 		l.anadirCarta(carta1);
-		lista.buscarJugadorPorId(1).añadirCarta(carta1);
+		lista.buscarJugadorPorId(1).anadir(carta1);
 	
 	}
 
@@ -64,7 +64,7 @@ public class JugadorTest {
 	public void testDecirUno() {
 		j1.decirUno("1 dos");
 		assertTrue(lista.buscarJugadorPorId(1).cantidadCartas()==3);
-		lista.buscarJugadorPorId(2).añadirCarta(carta1);
+		lista.buscarJugadorPorId(2).anadir(carta1);
 		j2.decirUno("1 uno");
 		assertTrue(lista.buscarJugadorPorId(1).cantidadCartas()==1);
 		

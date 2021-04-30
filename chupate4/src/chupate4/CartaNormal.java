@@ -20,7 +20,7 @@ public class CartaNormal extends Carta{
 	
 	//métodos
 	public void tirarCarta() {
-		System.out.println("[ ");
+		System.out.print("[ ");
 		this.escribirCarta();
 		System.out.print("]");
 	}

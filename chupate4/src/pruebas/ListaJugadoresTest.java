@@ -78,6 +78,7 @@ public class ListaJugadoresTest {
 		Baraja.getMiBaraja().crearBaraja();
 		Baraja.getMiBaraja().barajear();
 		Baraja.getMiBaraja().repartir();
+		Baraja.getMiBaraja().sacarPrimeraCarta();
 		l1.jugarPartida();
 	}
 

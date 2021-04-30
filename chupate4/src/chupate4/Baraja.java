@@ -173,7 +173,7 @@ public class Baraja {
 		ListaJugadores.getMiListaJugadores().jugarPartida();
 
 		}
-	private void sacarPrimeraCarta() {
+	public void sacarPrimeraCarta() {
 		Carta primeraCarta=this.listaInicial.ultimaCarta();
 		while (!(primeraCarta instanceof CartaNormal)) {
 			this.listaEchadas.anadirCarta(primeraCarta);
