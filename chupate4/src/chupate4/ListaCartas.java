@@ -46,18 +46,9 @@ public Carta ultimaCarta(){
 
 public Carta buscarCarta(String pString) {
 	
-	// color numero "negro 2"// color 
-	
-	boolean enc=false;
-	int cont=0;
-	String pos="";
-	int posnum=0;
-	while(pString.length()-1!=cont) {
-			pos=pos+pString.charAt(cont);
-			
-			cont=cont+1;
-	}
-	posnum=Integer.parseInt(pos);
+	//el string que se recibe en este metodo es un numero que esta entre 1 y el numero total de cartas
+
+	int posnum=Integer.parseInt(pString)-1;
 	return this.lista.get(posnum);
 	
 	
