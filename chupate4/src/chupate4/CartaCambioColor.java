@@ -38,14 +38,14 @@ public class CartaCambioColor extends Carta{
 	}
 	
 	public void tirarCarta() {
-		System.out.println("[ ");
+		System.out.print("[ ");
 		this.escribirCarta();
-		System.out.print("]");
+		System.out.println("]");
 		String nColor =this.preguntarColor();
 		super.setColor(nColor);
-		System.out.println("[ ");
+		System.out.print("[ ");
 		this.escribirCarta();
-		System.out.print("]");
+		System.out.println("]");
 		System.out.println("Se ha cambiado el color a "+nColor);
 	}
 	

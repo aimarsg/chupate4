@@ -22,7 +22,7 @@ public class CartaNormal extends Carta{
 	public void tirarCarta() {
 		System.out.print("[ ");
 		this.escribirCarta();
-		System.out.print("]");
+		System.out.println("]");
 	}
 	
 	public boolean sePuedeEchar() {
