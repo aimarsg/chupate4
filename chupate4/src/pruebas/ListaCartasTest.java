@@ -1,10 +1,13 @@
-package chupate4;
+package pruebas;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import chupate4.CartaNormal;
+import chupate4.ListaCartas;
 
 public class ListaCartasTest {
 	ListaCartas l1;

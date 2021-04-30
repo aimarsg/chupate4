@@ -1,10 +1,12 @@
-package chupate4;
+package pruebas;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import chupate4.Baraja;
 
 public class BarajaTest {
 
