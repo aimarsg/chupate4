@@ -49,11 +49,10 @@ public Carta buscarCarta(String pString) {
 	// color numero "negro 2"// color 
 	
 	boolean enc=false;
-	int cont=0;
-	int intentos=0;
+	int cont=1;
 	String pos="";
 	int posnum=0;
-	while(pString.charAt(cont) != ' ') {
+	while(pString.length()!=cont) {
 			pos=pos+pString.charAt(cont);
 			
 			cont=cont+1;
