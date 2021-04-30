@@ -173,14 +173,14 @@ public class Baraja {
 		ListaJugadores.getMiListaJugadores().jugarPartida();
 
 		}
-	private void sacarPrimeraCarta() {
+	public void sacarPrimeraCarta() {
 		Carta primeraCarta=this.listaInicial.ultimaCarta();
 		while (!(primeraCarta instanceof CartaNormal)) {
 			this.listaEchadas.anadirCarta(primeraCarta);
 			primeraCarta=this.listaInicial.ultimaCarta();
 		}
 		System.out.println("La partida empieza con esta carta:  ");
-		primeraCarta.tirarCarta();
+		this.echarCarta(primeraCarta);
 	}
 	public void terminarPartida() {
 		Baraja.getMiBaraja().listaEchadas=new ListaCartas();

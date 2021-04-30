@@ -33,7 +33,7 @@ public class Jugador {
 		Carta carta;
 		boolean tirada=false;
 		while (!tirada) {
-			System.out.println("Tienes "+this.cantidadCartas()+" Escribe la posición de la carta que quieras tirar");
+			System.out.println("Tienes "+this.cantidadCartas()+" Escribe la posiciï¿½n de la carta que quieras tirar");
 			cartaString=Teclado.getMiTeclado().leerString();
 			
 			do {try {
@@ -78,11 +78,11 @@ public class Jugador {
 					System.out.println("Esa carta no se puede tirar.");
 				}
 			}else {
-				System.out.println("La carta introducida no está en tu mano. Escribe otra.");
+				System.out.println("La carta introducida no estï¿½ en tu mano. Escribe otra.");
 			}
 		}
 			}catch(PosicionNoValida e) {
-				 System.out.println("La posición no es valida o no has escrito un número, escribe otra posicion: ");
+				 System.out.println("La posiciï¿½n no es valida o no has escrito un nï¿½mero, escribe otra posicion: ");
 
 				 cartaString=Teclado.getMiTeclado().leerString();
 	             
@@ -108,7 +108,7 @@ public class Jugador {
 		if ((pString.charAt(cont)=='u'||pString.charAt(cont)=='U')&&(pString.charAt(cont+1)=='n'||pString.charAt(cont+1)=='N')&&(pString.charAt(cont+2)=='O'||pString.charAt(cont+2)=='o')) {
 			System.out.println("Ha dicho UNO");
 		}else {
-			System.out.println("No has dicho uno,¡Te chupas dos!");
+			System.out.println("No has dicho uno,ï¿½Te chupas dos!");
 			this.cogerCarta(2);
 			}
 		}
@@ -148,5 +148,7 @@ public class Jugador {
 	public String getNombre() {
 		return(this.nombre);
 	}
-	
+	public void anadir(Carta pCarta) {
+		this.mano.anadirCarta(pCarta);
+	}
 }

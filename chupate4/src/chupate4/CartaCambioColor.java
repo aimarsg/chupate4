@@ -13,7 +13,7 @@ public class CartaCambioColor extends Carta{
 	} 
 	
 	public String preguntarColor() {
-		System.out.println("¿A qué color quieres cambiar?");
+		System.out.println("¿A que color quieres cambiar?");
 		String color =Teclado.getMiTeclado().leerString();
 		return color;
 	}
@@ -38,14 +38,14 @@ public class CartaCambioColor extends Carta{
 	}
 	
 	public void tirarCarta() {
-		System.out.println("[ ");
+		System.out.print("[ ");
 		this.escribirCarta();
-		System.out.print("]");
+		System.out.println("]");
 		String nColor =this.preguntarColor();
 		super.setColor(nColor);
-		System.out.println("[ ");
+		System.out.print("[ ");
 		this.escribirCarta();
-		System.out.print("]");
+		System.out.println("]");
 		System.out.println("Se ha cambiado el color a "+nColor);
 	}
 	
