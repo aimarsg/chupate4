@@ -13,10 +13,10 @@ public class ChupateCuatro extends CartaCambioColor {
 	}
 
 	public void tirarCarta(){
-		System.out.println("[ ");
+		System.out.print("[ ");
 		this.escribirCarta();
-		System.out.print("]");
-		System.out.println("�El siguiente jugador roba 4 cartas!");
+		System.out.println("]");
+		System.out.println("El siguiente jugador roba 4 cartas!");
 		ListaJugadores.getMiListaJugadores().siguienteJugador().cogerCarta(4);
 		String nColor=this.preguntarColor();
 		this.setColor(nColor);
@@ -29,7 +29,7 @@ public class ChupateCuatro extends CartaCambioColor {
 		
 }
 	public String preguntarColor() {
-		System.out.println("¿A qué color quieres cambiar?");
+		System.out.println("¿A que color quieres cambiar?");
 		String color =Teclado.getMiTeclado().leerString();
 		
 		return color;
