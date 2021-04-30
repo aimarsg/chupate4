@@ -180,7 +180,7 @@ public class Baraja {
 			primeraCarta=this.listaInicial.ultimaCarta();
 		}
 		System.out.println("La partida empieza con esta carta:  ");
-		primeraCarta.tirarCarta();
+		this.echarCarta(primeraCarta);
 	}
 	public void terminarPartida() {
 		Baraja.getMiBaraja().listaEchadas=new ListaCartas();
