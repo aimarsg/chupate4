@@ -48,14 +48,15 @@ public Carta buscarCarta(String pString) {
 	
 	// color numero "negro 2"// color 
 	
-	String color="";
-	String numero="";
-	int pos=0;
-	Character charActual=pString.charAt(pos);
+	
+	int pos=Character.getNumericValue(pString.charAt(0));
+	pos=pos-1;
+	return(this.lista.get(pos));
 	
 	
 	
-		while (pString.charAt(pos) != ' ') {
+	
+		/*while (pString.charAt(pos) != ' ') {
 			color=color+pString.charAt(pos);
 			pos=pos+1;
 		}
@@ -84,17 +85,23 @@ public Carta buscarCarta(String pString) {
 					if(cartaAux instanceof CambioSentido){
 					enc=true;
 				}
-			}else if(numero=="bloqueo") {
+			}
+			else if(numero=="bloqueo") {
 				if(cartaAux instanceof Bloqueo) {
 					enc=true;
 				}
+				
 			}else if(numero=="cambio color") {
 				if(cartaAux instanceof CartaCambioColor) {
 					enc=true;
-				}else if(cartaAux instanceof CartaNormal){
-					if(((CartaNormal) cartaAux).tieneMismoNumero(numero)) {
-						enc=true;
+				}
 					}
+				}
+			}
+			
+			else if(numero=="chupate cuatro") {
+				if(cartaAux instanceof ChupateDos) {
+					enc=true;
 				}
 			}
 			
@@ -108,6 +115,7 @@ public Carta buscarCarta(String pString) {
 			cartaAux.escribirCarta();
 			return(cartaAux);
 		}
+	*/
 	}
 	public void escribirCartas() {
 		Iterator<Carta> itr=this.getIterador();

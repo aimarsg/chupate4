@@ -10,7 +10,7 @@ public class CartaCambioColor extends Carta{
 	//constructora
 	public CartaCambioColor(String pColor) {
 		super(pColor);
-	}
+	} 
 	
 	public String preguntarColor() {
 		System.out.println("¿A qué color quieres cambiar?");

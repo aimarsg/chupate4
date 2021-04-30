@@ -92,6 +92,8 @@ public class Baraja {
 		CartaNormal c1,c2,c3,c4,c5,c6,c7,c8;
 		CambioSentido cs1,cs2,cs3,cs4;
 		CartaCambioColor cc1,cc2,cc3,cc4;
+		ChupateCuatro cc5,cc6;
+		ChupateDos cd1,cd2,cd3,cd4;
 		Bloqueo b1,b2,b3,b4;
 		while (i<10) {
 		c1=new CartaNormal("azul",String.valueOf(i));
@@ -130,6 +132,15 @@ public class Baraja {
 			cc3=new CartaCambioColor("negro");
 			cc4=new CartaCambioColor("negro");
 			
+			cc5=new ChupateCuatro("negro");
+			cc6=new ChupateCuatro("negro");
+			
+			cd1=new ChupateDos("azul");
+			cd2=new ChupateDos("amarillo");
+			cd3=new ChupateDos("rojo");
+			cd4=new ChupateDos("verde");
+		
+			
 			Baraja.getMiBaraja().listaInicial.anadirCarta(b1);
 			Baraja.getMiBaraja().listaInicial.anadirCarta(b2);
 			Baraja.getMiBaraja().listaInicial.anadirCarta(b3);
@@ -142,6 +153,12 @@ public class Baraja {
 			Baraja.getMiBaraja().listaInicial.anadirCarta(cc2);
 			Baraja.getMiBaraja().listaInicial.anadirCarta(cc3);
 			Baraja.getMiBaraja().listaInicial.anadirCarta(cc4);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cc5);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cc6);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cd1);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cd2);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cd3);
+			Baraja.getMiBaraja().listaInicial.anadirCarta(cd4);
 			
 			i=i+1;
 		}

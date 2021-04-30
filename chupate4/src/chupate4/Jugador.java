@@ -33,6 +33,7 @@ public class Jugador {
 		Carta carta;
 		boolean tirada=false;
 		while (!tirada) {
+			System.out.println("Tienes "+this.cantidadCartas()+" Escribe la posición de la carta que quieras tirar");
 			cartaString=Teclado.getMiTeclado().leerString();
 			carta= this.mano.buscarCarta(cartaString);
 			if (carta!=null) {
@@ -55,13 +56,14 @@ public class Jugador {
 	//comprobar a ver si es la penultima carta
 	if (this.mano.cantidadCartas()==1) {
 		int cont=0;
-		int contEspacio=0;
-		while (cont<pString.length() && contEspacio!=2) {
-			if (pString.charAt(cont)==' ') {
-					contEspacio=contEspacio+1;
-			}
-			cont=cont+1;
-		}
+		//int contEspacio=0;   //uso original, de momento innecesario
+		//while (cont<pString.length() && contEspacio!=1) {
+			//if (pString.charAt(cont)==' ') {
+				//	contEspacio=contEspacio+1;
+		//	}
+			//cont=cont+1;
+		//}
+		cont=2;
 		if ((pString.charAt(cont)=='u'||pString.charAt(cont)=='U')&&(pString.charAt(cont+1)=='n'||pString.charAt(cont+1)=='N')&&(pString.charAt(cont+2)=='O'||pString.charAt(cont+2)=='o')) {
 			System.out.println("Ha dicho UNO");
 		}else {
