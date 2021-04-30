@@ -24,8 +24,8 @@ public class Baraja {
 	public void anadirJugadores() {
 		boolean correcto=false;
 		int cuantos=0;
+		System.out.println("**El numero de jugadores de la partida debe ser entre 2 y 10.**");
 		System.out.println("Escribe cuantos jugadores van a jugar la partida: ");
-		System.out.println("**El numero de jugadores de la prtida debe ser entre 2 y 10.**");
 		//este while es para pedir un numero valido
 		while (!correcto) {
 			cuantos=Teclado.getMiTeclado().leerEntero();
