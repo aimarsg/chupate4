@@ -32,20 +32,29 @@ public class Baraja {
 			if (cuantos>=2 && cuantos<=10) {
 				correcto=true;
 			}else {//
-				System.out.println("El número introducido no es válido, por favor introduce otro");
+				System.out.println("El numero introducido no es valido, por favor introduce otro");
 			}
 		}
 		//este while es para añadir los jugadores
-		int cont=0;
+		Jugador j;
+		int cont=-1;
+		String nombre;
 		while (cont<cuantos) {
-			System.out.println("Escribe el nombre del jugador "+(cont+1));
-			String nombre=Teclado.getMiTeclado().leerString();
-			Jugador j=new Jugador(nombre, cont);
-			ListaJugadores.getMiListaJugadores().anadirJugador(j);
 			
+			
+				System.out.println("Escribe el nombre del jugador "+(cont+1));
+				nombre=Teclado.getMiTeclado().leerString();
+				
+				if( nombre==null) {
+					nombre=Teclado.getMiTeclado().leerString();
+				}
+				j=new Jugador(nombre, cont);
+				ListaJugadores.getMiListaJugadores().anadirJugador(j);
+				
 			cont=cont+1;
 		}
-	}
+         }
+	
 	
     public void barajear() {
         this.listaInicial.mezclar();
