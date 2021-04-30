@@ -169,9 +169,19 @@ public class Baraja {
 		Baraja.getMiBaraja().barajear();
 		Baraja.getMiBaraja().anadirJugadores();
 		Baraja.getMiBaraja().repartir();
+		Baraja.getMiBaraja().sacarPrimeraCarta();
 		ListaJugadores.getMiListaJugadores().jugarPartida();
 
 		}
+	private void sacarPrimeraCarta() {
+		Carta primeraCarta=this.listaInicial.ultimaCarta();
+		while (!(primeraCarta instanceof CartaNormal)) {
+			this.listaEchadas.anadirCarta(primeraCarta);
+			primeraCarta=this.listaInicial.ultimaCarta();
+		}
+		System.out.println("La partida empieza con esta carta:  ");
+		primeraCarta.tirarCarta();
+	}
 	public void terminarPartida() {
 		Baraja.getMiBaraja().listaEchadas=new ListaCartas();
 		Baraja.getMiBaraja().listaInicial=new ListaCartas();
