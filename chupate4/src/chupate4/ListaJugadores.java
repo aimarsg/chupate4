@@ -9,7 +9,7 @@ public class ListaJugadores {
 	private static int idJugadorActual=0;
 	private boolean sentido=true;
 	
-	public ListaJugadores() {
+	private ListaJugadores() {
 		this.lista=new ArrayList<Jugador>();
 	}
 	private Iterator<Jugador> getIterator(){
@@ -26,10 +26,11 @@ public class ListaJugadores {
 	
 	public Jugador buscarJugadorPorId(int pIdJugador) {
 		Jugador j=null;
-		Iterator<Jugador>itr=this.getIterator();
+		Iterator<Jugador> itr=this.getIterator();
 		boolean enc=false;
 		
-		while(itr.hasNext()) {
+		while(itr.hasNext() && !enc) {
+			
 			j=itr.next();
 			if(j.tieneEsteId(pIdJugador)) {
 				enc=true;
@@ -45,7 +46,7 @@ public class ListaJugadores {
 		Jugador j;
 		boolean terminar=false;
 		while (!terminar) {
-			j=this.buscarJugadorPorId((ListaJugadores.idJugadorActual) % this.cantidadJugadores());
+			j=this.buscarJugadorPorId(modulo(ListaJugadores.idJugadorActual));
 			terminar=j.jugarTurno();
 			if (terminar) {
 				Baraja.getMiBaraja().terminarPartida();
@@ -76,13 +77,22 @@ public class ListaJugadores {
 		}
 		return(ListaJugadores.miListaJugadores);
 	}
+	
+	private int modulo(int pNum) {
+		int r = pNum % this.cantidadJugadores();
+		if (r < 0)
+		{
+		    r += this.cantidadJugadores();
+		}
+		return (r);
+	}
 	public Jugador siguienteJugador() {
 		int id;
 		if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
-			id=(ListaJugadores.idJugadorActual+1) % this.cantidadJugadores();
+			id=modulo(ListaJugadores.idJugadorActual+1);
 		}
 		else {
-			id=(ListaJugadores.idJugadorActual-1) % this.cantidadJugadores();
+			id=modulo(ListaJugadores.idJugadorActual-1);
 		}
 		return(this.buscarJugadorPorId(id));
 	}
@@ -95,7 +105,7 @@ public class ListaJugadores {
 		}
 	}
 	public void saltarTurno() {
-		if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
+		if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de bloqueo
 			ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual+1;
 		}
 		else {
