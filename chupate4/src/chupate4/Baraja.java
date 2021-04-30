@@ -21,25 +21,24 @@ public class Baraja {
 	public void repartir() {
 		ListaJugadores.getMiListaJugadores().repartir();
 	}
-	public void anadirJugadores() {
-		boolean correcto=false;
-		int cuantos=0;
+	public int preguntarNumJugadores() {
+		
+		int cuantos;
 		System.out.println("**El numero de jugadores de la partida debe ser entre 2 y 10.**");
 		System.out.println("Escribe cuantos jugadores van a jugar la partida: ");
 		//este while es para pedir un numero valido
-		while (!correcto) {
-			cuantos=Teclado.getMiTeclado().leerEntero();
-			if (cuantos>=2 && cuantos<=10) {
-				correcto=true;
-			}else {//
-				System.out.println("El numero introducido no es valido, por favor introduce otro");
-			}
-		}
+		cuantos=Teclado.getMiTeclado().leerEntero(2, 10);
+		
+		return(cuantos);
+	}
+	public void anadirJugadores(int pCuantos) {
+		
+		System.out.println("En la partida va a haber " + pCuantos + " jugadores.");
 		//este while es para añadir los jugadores
 		Jugador j;
-		int cont=-1;
+		int cont=0;
 		String nombre;
-		while (cont<cuantos) {
+		while (cont<pCuantos) {
 			
 			
 				System.out.println("Escribe el nombre del jugador "+(cont+1));
@@ -174,9 +173,11 @@ public class Baraja {
 
 		}
 	public void jugarPartida() {
+		int cuantos;
 		Baraja.getMiBaraja().crearBaraja();
 		Baraja.getMiBaraja().barajear();
-		Baraja.getMiBaraja().anadirJugadores();
+		cuantos= this.preguntarNumJugadores();
+		Baraja.getMiBaraja().anadirJugadores(cuantos);
 		Baraja.getMiBaraja().repartir();
 		Baraja.getMiBaraja().sacarPrimeraCarta();
 		ListaJugadores.getMiListaJugadores().jugarPartida();

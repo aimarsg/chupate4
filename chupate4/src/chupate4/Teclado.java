@@ -19,6 +19,33 @@ public class Teclado {
 	
 	public int leerEntero () {
 		int r = sc.nextInt();
+		
+		sc.nextLine();
+		return r;
+	}
+	
+	public int leerEntero (int pDesde, int pHasta) {
+		int r = sc.nextInt();
+		boolean todoOk=false;
+		do{try {
+			if (r>=pDesde && r<=pHasta) {
+				todoOk=true;
+			}
+			else {
+				throw new NumeroFueraDeRangoException();
+			}
+			}
+		
+		catch(NumeroFueraDeRangoException e){
+			System.out.println("El numero introducido no esta entre " + pDesde +" y "+ pHasta + ".");
+			System.out.println("Escribe otro numero:");
+			r=sc.nextInt();
+		}
+		}
+		while(!todoOk);
+		
+		
+		sc.nextLine();
 		return r;
 	}
 	

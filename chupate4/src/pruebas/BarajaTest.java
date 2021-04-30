@@ -31,7 +31,10 @@ import chupate4.*
 
 	@Test
 	public void testAnadirJugadores() {
-		Baraja.getMiBaraja().anadirJugadores();
+		int cuantos;
+		cuantos=Baraja.getMiBaraja().preguntarNumJugadores();
+		
+		Baraja.getMiBaraja().anadirJugadores(cuantos);
 		
 	}
 

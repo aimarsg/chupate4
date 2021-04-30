@@ -51,16 +51,12 @@ public class Jugador {
 			                && numero.charAt(i) <= '9') {
 			                todoNumeros= true;
 			            }
-			            else {
-			            	
+			            else {	
 			                todoNumeros= false;
 			            }
 			            i=i+1;
 			        }
-			        
-			    
-				
-				
+			   
 				if (!todoNumeros||this.cantidadCartas()<Integer.parseInt(numero)) {
 					throw new PosicionNoValida();
 				}
