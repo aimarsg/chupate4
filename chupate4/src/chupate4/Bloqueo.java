@@ -43,8 +43,9 @@ public class Bloqueo extends EspecialesColor{
 
 	
 	public boolean sePuedeEchar() {
-		boolean puede =false;
+		boolean puede =true;
 		if(!super.sePuedeEchar()) {
+			puede=false;
 			if(Baraja.getMiBaraja().ultimaCarta() instanceof Bloqueo) {
 				puede=true;
 			}

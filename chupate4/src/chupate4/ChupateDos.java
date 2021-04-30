@@ -13,7 +13,7 @@ public class ChupateDos extends EspecialesColor {
 		System.out.println("[ ");
 		this.escribirCarta();
 		System.out.print("]");
-		System.out.println("¡El siguiente jugador roba dos cartas!");
+		System.out.println("ï¿½El siguiente jugador roba dos cartas!");
 		ListaJugadores.getMiListaJugadores().siguienteJugador().cogerCarta(2);;
 		ListaJugadores.getMiListaJugadores().saltarTurno();
 		
@@ -38,6 +38,7 @@ public class ChupateDos extends EspecialesColor {
 	public boolean sePuedeEchar() {
 		boolean sePuede=true;
 		if(!super.sePuedeEchar()) {
+			sePuede=false;
 			if (Baraja.getMiBaraja().ultimaCarta() instanceof ChupateDos) {
 				sePuede=true;
 			}

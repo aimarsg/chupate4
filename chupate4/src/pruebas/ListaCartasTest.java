@@ -62,7 +62,11 @@ public class ListaCartasTest {
 
 	@Test
 	public void testPuedeEcharCarta() {
-		
+	Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(cs1);
+	assertTrue(c1.sePuedeEchar());
+	assertTrue(cs2.sePuedeEchar());
+	assertTrue(ccc.sePuedeEchar());
+	assertFalse(c3.sePuedeEchar());
 	}
 
 	@Test
