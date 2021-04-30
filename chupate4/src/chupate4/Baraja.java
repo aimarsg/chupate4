@@ -24,8 +24,8 @@ public class Baraja {
 	public void anadirJugadores() {
 		boolean correcto=false;
 		int cuantos=0;
+		System.out.println("**El numero de jugadores de la partida debe ser entre 2 y 10.**");
 		System.out.println("Escribe cuantos jugadores van a jugar la partida: ");
-		System.out.println("**El numero de jugadores de la prtida debe ser entre 2 y 10.**");
 		//este while es para pedir un numero valido
 		while (!correcto) {
 			cuantos=Teclado.getMiTeclado().leerEntero();
@@ -169,9 +169,19 @@ public class Baraja {
 		Baraja.getMiBaraja().barajear();
 		Baraja.getMiBaraja().anadirJugadores();
 		Baraja.getMiBaraja().repartir();
+		Baraja.getMiBaraja().sacarPrimeraCarta();
 		ListaJugadores.getMiListaJugadores().jugarPartida();
 
 		}
+	private void sacarPrimeraCarta() {
+		Carta primeraCarta=this.listaInicial.ultimaCarta();
+		while (!(primeraCarta instanceof CartaNormal)) {
+			this.listaEchadas.anadirCarta(primeraCarta);
+			primeraCarta=this.listaInicial.ultimaCarta();
+		}
+		System.out.println("La partida empieza con esta carta:  ");
+		primeraCarta.tirarCarta();
+	}
 	public void terminarPartida() {
 		Baraja.getMiBaraja().listaEchadas=new ListaCartas();
 		Baraja.getMiBaraja().listaInicial=new ListaCartas();
