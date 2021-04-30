@@ -148,5 +148,7 @@ public class Jugador {
 	public String getNombre() {
 		return(this.nombre);
 	}
-	
+	public void añadirCarta(Carta pCarta) {
+		this.mano.anadirCarta(pCarta);
+	}
 }
