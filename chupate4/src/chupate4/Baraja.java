@@ -181,4 +181,7 @@ public class Baraja {
 	public void escribirBaraja() {
 		this.listaInicial.escribirCartas();
 	}
+	public void anadirUnaCartaEchadaParaPruebas(Carta pCarta) {
+		this.listaEchadas.anadirCarta(pCarta);
+	}
 	}
