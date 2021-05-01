@@ -13,19 +13,19 @@ public class ChupateCuatro extends CartaCambioColor {
 	}
 
 	public void tirarCarta(){
-		System.out.print("[ ");
-		this.escribirCarta();
-		System.out.println("]");
-		System.out.println("El siguiente jugador"+ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre()+" roba 4 cartas!");
-		System.out.println("Se le salta el turno a "+ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre());
-		ListaJugadores.getMiListaJugadores().siguienteJugador().cogerCarta(4);
-		System.out.println(" Tendrá "+ListaJugadores.getMiListaJugadores().siguienteJugador().cantidadCartas()+ "cartas. ");
 		String nColor=this.preguntarColor();
 		this.setColor(nColor);
 		System.out.println("[ ");
 		this.escribirCarta();
 		System.out.print("]");
 		System.out.println("Se ha cambiado el color a "+nColor);
+		System.out.print("[ ");
+		this.escribirCarta();
+		System.out.println("]");
+		System.out.println(ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre()+" roba 4 cartas!");
+		System.out.println("Se le salta el turno a "+ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre());
+		ListaJugadores.getMiListaJugadores().siguienteJugador().cogerCarta(4);
+		System.out.println("Tendra "+ListaJugadores.getMiListaJugadores().siguienteJugador().cantidadCartas()+ " cartas. ");
 		ListaJugadores.getMiListaJugadores().saltarTurno();
 		
 		
