@@ -31,7 +31,7 @@ public class ChupateCuatro extends CartaCambioColor {
 		
 }
 	public String preguntarColor() {
-		System.out.println("Â¿A que color quieres cambiar?");
+		System.out.println("¿A que color quieres cambiar?");
 		String color =Teclado.getMiTeclado().leerString();
 		
 		return color;

@@ -22,7 +22,7 @@ public class CartaNormalTest {
 
 	@Test
 	public void testSePuedeEchar() {
-		fail("Not yet implemented");
+		assertTrue("rojo"=="ROJO");
 	}
 
 	@Test

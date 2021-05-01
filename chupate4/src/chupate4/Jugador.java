@@ -39,14 +39,16 @@ public class Jugador {
 			try {
 				int pos=0;
 				String numero="";
-				while (pos<cartaString.length()) {
+				boolean enc=false;
+				while (pos<cartaString.length()&&!enc) {
 					if (cartaString.charAt(pos) == ' ') {
-						pos=cartaString.length();
+						enc=true;
 					}else {
 						numero=numero+cartaString.charAt(pos);
+						pos=pos+1;
 					}
-					pos=pos+1;
-					}
+					
+				}
 				boolean todoNumeros=true;
 				if (numero.length()!=0) {
 					int i = 0 ;  
@@ -168,14 +170,17 @@ public class Jugador {
 			this.tirarCarta();
 		}else {
 			System.out.println("No puedes tirar tras coger una carta, por lo tanto tu turno se termina.");
-			Thread.sleep(2*1000);
+			
 			
 		}
+		Thread.sleep(2000);
 		if (this.mano.cantidadCartas()==0) {
 			return(true);
 		}else {
 			return(false);
 		}
+		
+		
 	}
 	public String getNombre() {
 		return(this.nombre);
