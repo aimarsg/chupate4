@@ -187,6 +187,7 @@ public class Baraja {
 		Carta primeraCarta=this.listaInicial.ultimaCarta();
 		while (!(primeraCarta instanceof CartaNormal)) {
 			this.listaEchadas.anadirCarta(primeraCarta);
+			this.listaEchadas.eliminarCarta(primeraCarta);
 			primeraCarta=this.listaInicial.ultimaCarta();
 		}
 		System.out.println("La partida empieza con esta carta:  ");

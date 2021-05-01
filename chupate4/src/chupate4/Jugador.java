@@ -32,61 +32,57 @@ public class Jugador {
 		String cartaString;
 		Carta carta;
 		boolean tirada=false;
-		while (!tirada) {
-			System.out.println("Tienes "+this.cantidadCartas()+" Escribe la posici�n de la carta que quieras tirar");
-			cartaString=Teclado.getMiTeclado().leerString();
+		System.out.println("Escribe la posicion de la carta que quieras tirar");
+		cartaString=Teclado.getMiTeclado().leerString();
 			
-			do {try {
+		do {
+			try {
 				int pos=0;
 				String numero="";
-				while (cartaString.charAt(pos) != ' ') {
-					numero=numero+cartaString.charAt(pos);
+				while (pos<cartaString.length()) {
+					if (cartaString.charAt(pos) == ' ') {
+						pos=cartaString.length();
+					}else {
+						numero=numero+cartaString.charAt(pos);
+					}
 					pos=pos+1;
-				}
+					}
 				boolean todoNumeros=true;
-				 int i = 0 ;  
-				 while(i<pos&&todoNumeros){
-							           
-			            if (numero.charAt(i) >= '0'
-			                && numero.charAt(i) <= '9') {
-			                todoNumeros= true;
+				int i = 0 ;  
+				while(i<pos&&todoNumeros){           
+					if (numero.charAt(i) >= '0' && numero.charAt(i) <= '9') {
+			            todoNumeros= true;
+			         }
+			        else {	
+			        	todoNumeros= false;
 			            }
-			            else {	
-			                todoNumeros= false;
-			            }
-			            i=i+1;
-			        }
-			   
+			         i=i+1;
+			      }
 				if (!todoNumeros||this.cantidadCartas()<Integer.parseInt(numero)) {
 					throw new PosicionNoValida();
 				}
-			
-			
 				else {
-			carta= this.mano.buscarCarta(numero);
-			if (carta!=null) {
-				if (carta.sePuedeEchar()) {
-					tirada=true;
-					Baraja.getMiBaraja().echarCarta(carta);
-					this.mano.eliminarCarta(carta);
-					this.decirUno(cartaString);
-				}else {
-					System.out.println("Esa carta no se puede tirar.");
+					carta= this.mano.buscarCarta(numero);
+					if (carta!=null) {
+						if (carta.sePuedeEchar()) {
+							tirada=true;
+							Baraja.getMiBaraja().echarCarta(carta);
+							this.mano.eliminarCarta(carta);
+							this.decirUno(cartaString);
+						}else {
+							//
+						}
+					}else {
+						//
+					}
 				}
-			}else {
-				System.out.println("La carta introducida no est� en tu mano. Escribe otra.");
-			}
-		}
 			}catch(PosicionNoValida e) {
-				 System.out.println("La posici�n no es valida o no has escrito un n�mero, escribe otra posicion: ");
-
+				 System.out.println("La posicion no es valida o no has escrito un numero, escribe otra posicion: ");
 				 cartaString=Teclado.getMiTeclado().leerString();
-	             
-	             
 			}
-			}while(!tirada);
-			}
+		}while(!tirada);
 	}
+
 	
 	// completar
 	public void decirUno(String pString) {
@@ -128,6 +124,13 @@ public class Jugador {
 	}
 	
 	public boolean jugarTurno() {
+		System.out.println();
+		System.out.println("==================================================");
+		System.out.println();
+		System.out.println("==================================================");
+		System.out.println();
+		System.out.println("Es el turno de "+this.nombre+".");
+		System.out.println("Tienes "+this.cantidadCartas()+" cartas: ");
 		this.escribirMano();
 		if (!this.puedeEcharCarta()) {
 			this.cogerCarta(1);
