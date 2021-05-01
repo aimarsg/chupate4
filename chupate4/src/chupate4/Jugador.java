@@ -48,36 +48,51 @@ public class Jugador {
 					pos=pos+1;
 					}
 				boolean todoNumeros=true;
-				int i = 0 ;  
-				while(i<pos&&todoNumeros){           
-					if (numero.charAt(i) >= '0' && numero.charAt(i) <= '9') {
-			            todoNumeros= true;
-			         }
-			        else {	
-			        	todoNumeros= false;
-			            }
-			         i=i+1;
-			      }
-				if (!todoNumeros||this.cantidadCartas()<Integer.parseInt(numero)) {
-					throw new PosicionNoValida();
-				}
-				else {
-					carta= this.mano.buscarCarta(numero);
-					if (carta!=null) {
-						if (carta.sePuedeEchar()) {
-							tirada=true;
-							Baraja.getMiBaraja().echarCarta(carta);
-							this.mano.eliminarCarta(carta);
-							this.decirUno(cartaString);
-						}else {
-							//
+				if (numero.length()!=0) {
+					int i = 0 ;  
+					while(i<pos&&todoNumeros){           
+						if (numero.charAt(i) >= '0' && numero.charAt(i) <= '9') {
+							todoNumeros= true;
 						}
-					}else {
-						//
+						else {	
+							todoNumeros= false;
+			            	}
+						i=i+1;
 					}
-				}
+			      }
+				if (!todoNumeros||numero=="") {
+					throw new PosicionNoValida();
+				}else {
+					if (this.cantidadCartas()<Integer.parseInt(numero)) {
+							throw new NumeroFueraDeRangoException();
+						}
+						else {
+							carta= this.mano.buscarCarta(numero);
+							if (carta!=null) {
+								if (carta.sePuedeEchar()) {
+									tirada=true;
+									Baraja.getMiBaraja().echarCarta(carta);
+									this.mano.eliminarCarta(carta);
+									this.decirUno(cartaString);
+								}else {
+									throw new CartaNoSePuedeTirarException();
+								}
+							}else {
+								throw new CartaNoEstaEnManoException();
+							}
+						}
+					}
 			}catch(PosicionNoValida e) {
-				 System.out.println("La posicion no es valida o no has escrito un numero, escribe otra posicion: ");
+				 System.out.println("No has escrito un numero, escribe un numero: ");
+				 cartaString=Teclado.getMiTeclado().leerString();
+			}catch(CartaNoSePuedeTirarException e) {
+				System.out.println("La carta que esta en la posicion introducida no se puede tirar, escribe otra posicion: ");
+				cartaString=Teclado.getMiTeclado().leerString();
+			}catch(NumeroFueraDeRangoException e) {
+				System.out.println("En tu mano tienes "+this.cantidadCartas()+", escibe un numero menor o igual que "+this.cantidadCartas());
+				cartaString=Teclado.getMiTeclado().leerString();
+			}catch(CartaNoEstaEnManoException e){
+				System.out.println("La carta introducida no esta en mano, escribe otra");
 				 cartaString=Teclado.getMiTeclado().leerString();
 			}
 		}while(!tirada);
@@ -100,8 +115,9 @@ public class Jugador {
 		if ((pString.charAt(cont)=='u'||pString.charAt(cont)=='U')&&(pString.charAt(cont+1)=='n'||pString.charAt(cont+1)=='N')&&(pString.charAt(cont+2)=='O'||pString.charAt(cont+2)=='o')) {
 			System.out.println("Ha dicho UNO");
 		}else {
-			System.out.println("No has dicho uno,�Te chupas dos!");
+			System.out.println("No has dicho uno,te chupas dos!");
 			this.cogerCarta(2);
+			System.out.println("Ahora tienes "+this.cantidadCartas()+"  cartas.");
 			}
 		}
 		
@@ -131,12 +147,20 @@ public class Jugador {
 		System.out.println();
 		System.out.println("Es el turno de "+this.nombre+".");
 		System.out.println("Tienes "+this.cantidadCartas()+" cartas: ");
+		System.out.println();
 		this.escribirMano();
 		if (!this.puedeEcharCarta()) {
+			System.out.println("No puedes tirar ninguna de las cartas que tienes en tu mano, robas 1");
 			this.cogerCarta(1);
+			System.out.println("Tienes "+this.cantidadCartas()+" cartas: ");
+			System.out.println();
+			this.escribirMano();
 		}
 		if (this.puedeEcharCarta()) {
 			this.tirarCarta();
+		}else {
+			System.out.println("No puedes tirar tras coger una carta, por lo tanto tu turno se termina.");
+			
 		}
 		if (this.mano.cantidadCartas()==0) {
 			return(true);
