@@ -19,6 +19,7 @@ public class ChupateCuatro extends CartaCambioColor {
 		System.out.println("El siguiente jugador"+ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre()+" roba 4 cartas!");
 		System.out.println("Se le salta el turno a "+ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre());
 		ListaJugadores.getMiListaJugadores().siguienteJugador().cogerCarta(4);
+		System.out.println(" Tendrá "+ListaJugadores.getMiListaJugadores().siguienteJugador().cantidadCartas()+ "cartas. ");
 		String nColor=this.preguntarColor();
 		this.setColor(nColor);
 		System.out.println("[ ");
