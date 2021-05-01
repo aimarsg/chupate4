@@ -112,8 +112,14 @@ public class Jugador {
 			cont=cont+1;
 		}
 		
-		if ((pString.charAt(cont)=='u'||pString.charAt(cont)=='U')&&(pString.charAt(cont+1)=='n'||pString.charAt(cont+1)=='N')&&(pString.charAt(cont+2)=='O'||pString.charAt(cont+2)=='o')) {
-			System.out.println("Ha dicho UNO");
+		if (pString.length()==5) {
+			if ((pString.charAt(cont)=='u'||pString.charAt(cont)=='U')&&(pString.charAt(cont+1)=='n'||pString.charAt(cont+1)=='N')&&(pString.charAt(cont+2)=='O'||pString.charAt(cont+2)=='o')) {
+				System.out.println("Has dicho UNO");
+			}else {
+				System.out.println("No has dicho uno,te chupas dos!");
+				this.cogerCarta(2);
+				System.out.println("Ahora tienes "+this.cantidadCartas()+"  cartas.");
+				}
 		}else {
 			System.out.println("No has dicho uno,te chupas dos!");
 			this.cogerCarta(2);
@@ -139,7 +145,8 @@ public class Jugador {
 		return(this.mano.puedeEcharCarta());
 	}
 	
-	public boolean jugarTurno() {
+	public boolean jugarTurno() throws InterruptedException {
+	
 		System.out.println();
 		System.out.println("==================================================");
 		System.out.println();
@@ -150,6 +157,7 @@ public class Jugador {
 		System.out.println();
 		this.escribirMano();
 		if (!this.puedeEcharCarta()) {
+			System.out.println();
 			System.out.println("No puedes tirar ninguna de las cartas que tienes en tu mano, robas 1");
 			this.cogerCarta(1);
 			System.out.println("Tienes "+this.cantidadCartas()+" cartas: ");
@@ -160,6 +168,7 @@ public class Jugador {
 			this.tirarCarta();
 		}else {
 			System.out.println("No puedes tirar tras coger una carta, por lo tanto tu turno se termina.");
+			Thread.sleep(2*1000);
 			
 		}
 		if (this.mano.cantidadCartas()==0) {

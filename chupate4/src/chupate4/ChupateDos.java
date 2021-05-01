@@ -13,7 +13,7 @@ public class ChupateDos extends EspecialesColor {
 		System.out.print("[ ");
 		this.escribirCarta();
 		System.out.println("]");
-		System.out.println(ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre()+"roba dos cartas y pierde el turno!");
+		System.out.println(ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre()+" roba dos cartas y pierde el turno!");
 		ListaJugadores.getMiListaJugadores().siguienteJugador().cogerCarta(2);
 		System.out.println();
 		System.out.println("Ahora "+ListaJugadores.getMiListaJugadores().siguienteJugador().getNombre()+" tiene "+ListaJugadores.getMiListaJugadores().siguienteJugador().cantidadCartas());

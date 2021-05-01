@@ -47,17 +47,21 @@ public class ListaJugadores {
 		boolean terminar=false;
 		while (!terminar) {
 			j=this.buscarJugadorPorId(modulo(ListaJugadores.idJugadorActual));
-			terminar=j.jugarTurno();
-			if (terminar) {
-				Baraja.getMiBaraja().terminarPartida();
-				System.out.println("Ha ganado "+j.getNombre());
+			try {
+				terminar=j.jugarTurno();
+				if (terminar) {
+					Baraja.getMiBaraja().terminarPartida();
+					System.out.println("Ha ganado "+j.getNombre());
+				}
+				if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
+					ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual+1;
+				}
+				else {
+					ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual-1;
+				}
 			}
-			if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
-				ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual+1;
-			}
-			else {
-				ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual-1;
-			}
+		catch(InterruptedException e){
+			System.out.println();}
 		}
 	}
 	public void repartir() {//hubhub
