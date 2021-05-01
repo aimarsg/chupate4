@@ -78,6 +78,7 @@ public class ListaCartasTest {
 	assertTrue(cc22.sePuedeEchar());
 	assertFalse(c3.sePuedeEchar());
 	assertTrue(cc4.sePuedeEchar());
+	assertTrue(c2.sePuedeEchar());
 	}
 
 	@Test
