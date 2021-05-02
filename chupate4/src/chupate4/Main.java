@@ -12,20 +12,23 @@ public class Main {
 		if(i==1) {
 		Baraja.getMiBaraja().jugarPartida();
 		}else {
-			Main.imprimirDatos();
+			 imprimirDatos();
 			
 		}
 	}
 	public static void imprimirDatos(){
-		String dirActual = System.getProperty("user.dir");
-		String pathIn = dirActual + File.separator + "reglas.txt";
+		//String dirActual = System.getProperty("user.dir");
+		//String pathIn = dirActual +File.separator + "reglas.txt";
 		InputStream fich = null;
-		try {
-			fich = new FileInputStream(pathIn);
-		} catch (FileNotFoundException e) {
+		//try {
+			ClassLoader classLoader = Main.class.getClassLoader();
+			fich = classLoader.getResourceAsStream("reglas.txt");
+			
+			//fich = new FileInputStream(pathIn);
+		/*} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		Scanner sc = new Scanner(fich);
 		while (sc.hasNextLine()){
 			String linea = sc.nextLine();
