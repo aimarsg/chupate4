@@ -47,10 +47,7 @@ En cada turno, el jugador podra tirar una unica carta de entre las que tenga en 
 Fuentes:
 https://www.uno-juego.es/reglas-del-juego/
 https://es.wikipedia.org/wiki/Uno_(juego)
-
-Fuentes:
-https://www.uno-juego.es/reglas-del-juego/
-https://es.wikipedia.org/wiki/Uno_(juego)
+**Para poder imprimir los colores se ha utilizado la libreria gratuita JANSI -  https://github.com/fusesource/jansi
 
 
 
