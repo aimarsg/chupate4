@@ -205,4 +205,8 @@ public class Baraja {
 	public void anadirUnaCartaEchadaParaPruebas(Carta pCarta) {
 		this.listaEchadas.anadirCarta(pCarta);
 	}
+	
+	public int cartasDisponibles() {
+		return((this.listaEchadas.cantidadCartas()-1)+this.listaInicial.cantidadCartas());
+	}
 	}

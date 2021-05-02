@@ -17,6 +17,11 @@ public class Jugador {
 	//otros metodos
 	
 	public void cogerCarta(int pCuantas) {
+		if(pCuantas>Baraja.getMiBaraja().cartasDisponibles()) {
+			pCuantas=Baraja.getMiBaraja().cartasDisponibles();
+			System.out.println("Solo hay "+Baraja.getMiBaraja().cartasDisponibles()+ "cartas disponibles, por lo que solo se roban esas cartas.");
+		}
+		
 		int i = 1;
 		Carta carta;
 		while (i<=pCuantas) {
