@@ -1,49 +1,70 @@
-La baraja del UNO está formada por 108 cartas. Entre ellas se distinguen dos tipos diferentes de carta:
+La baraja del UNO esta formada por 108 cartas. Entre ellas se distinguen dos tipos diferentes de carta:
 
 
 Cartas normales
-	Este tipo de cartas se dividen en 4 colores: Azul, Rojo, Verde y Amarillo y a su vez cada color trae cartas numéricas 
+	Este tipo de cartas se dividen en 4 colores: Azul, Rojo, Verde y Amarillo y a su vez cada color trae cartas numericas 
 	del 0 al 9 (dos de cada una, salvo el cero).
 
 Cartas especiales
-	Son una serie de cartas que, como su nombre indica, presentan características especiales que permiten alterar el flujo 
-	normal del juego mediante ciertas acciones. Estas cartas son la carta de bloqueo, Cambio de sentido, “chúpate 2”, Comodín
-	de cambio de color y “chúpate 4”. Si una carta especial como retorno o bloqueo es tirada cuando es tu última carta debes 
+	Son una serie de cartas que, como su nombre indica, presentan caracteristicas especiales que permiten alterar el flujo 
+	normal del juego mediante ciertas acciones. Estas cartas son la carta de bloqueo, Cambio de sentido, "chupate 2", Comodin
+	de cambio de color y "chupate 4". Si una carta especial como retorno o bloqueo es tirada cuando es tu ultima carta debes 
 	agarrar otra y tirarla si este es del mismo. 
 
 
-	Carta “chupate dos”: Cuando se pone esta carta, el siguiente jugador debe tomar dos cartas y pierde su turno. Esta carta
-	 se puede tirar tras una carta normal del mismo color o sobre otra carta “chúpate dos”, pero no se puede echar sobre un 
-	 “chúpate cuatro” (*).
+	Carta "chupate dos": Cuando se pone esta carta, el siguiente jugador debe tomar dos cartas y pierde su turno. Esta carta
+	 se puede tirar tras una carta normal del mismo color o sobre otra carta "chupate dos", pero no se puede echar sobre un 
+	 "chupate cuatro" (*).
 
 	Carta de cambio de sentido: Si se ha jugado por la izquierda, ahora se juega por la derecha y por la inversa. La carta 
-	sólo se puede superponer sobre una carta de su mismo color o sobre otra carta de cambio de sentido. 
+	solo se puede superponer sobre una carta de su mismo color o sobre otra carta de cambio de sentido. 
 
-	Carta de bloqueo: Después de poner esta carta, el siguiente jugador será “saltado”. La carta sólo se puede superponer en 
+	Carta de bloqueo: Despues de poner esta carta, el siguiente jugador sera "saltado". La carta solo se puede superponer en 
 	una carta con color correspondiente o en otra carta de bloqueo. 
 
-	Carta de elección de colores: Con esta carta el jugador decide qué color sigue en el juego. También el color presente 
-	puede ser seleccionado. Se puede echar en cualquier momento excepto si el jugador anterior ha echado un “chúpate 4”o 
-	“chúpate 2”.
+	Carta de eleccion de colores: Con esta carta el jugador decide que color sigue en el juego. Tambien el color presente 
+	puede ser seleccionado. Se puede echar en cualquier momento excepto si el jugador anterior ha echado un "chupate 4"o 
+	"chupate 2".
 
-	Carta “Chúpate 4”: Esta carta es la mejor. El jugador decide qué color sigue en el juego. Además, el siguiente jugador 
+	Carta "Chupate 4": Esta carta es la mejor. El jugador decide que color sigue en el juego. Ademas, el siguiente jugador 
 	debe tomar cuatro cartas y pierde su turno (*). 
 
-(*) En nuestra versión, cuando un jugador tire un chúpate, el siguiente jugador roba las cartas correspondientes y pierde su turno, 
-sin opción a echar otro chúpate para evitarlo y que las cartas a robar se acumulen para el próximo jugador.
+(*) En nuestra version, cuando un jugador tire un chupate, el siguiente jugador roba las cartas correspondientes y pierde su turno, 
+sin opcion a echar otro chupate para evitarlo y que las cartas a robar se acumulen para el proximo jugador.
 
-En nuestro juego, habrá entre 2 y 10 jugadores. Se empieza el juego repartiendo 7 cartas a cada jugador. En el juego normal 
-empieza a echar cartas el jugador que se encuentre a la derecha del que reparte las cartas. En nuestro caso, se seleccionará 
+En nuestro juego, habra entre 2 y 10 jugadores. Se empieza el juego repartiendo 7 cartas a cada jugador. En el juego normal 
+empieza a echar cartas el jugador que se encuentre a la derecha del que reparte las cartas. En nuestro caso, se seleccionara 
 aleatoriamente el jugador que empiece la partida. Tras repartir las cartas se saca una carta del mazo para comenzar el juego. 
 En el caso de que la carta que salga sea especial, se vuelve a sacar una carta hasta que la carta que salga sea normal.
 
-En cada turno, el jugador podrá tirar una única carta de entre las que tenga en su mano. Una carta puede ser jugada si coincide
- en número o en color con la carta que está en la mesa. La carta especial +4 se puede tirar en cualquier momento independientemente 
- de la carta que esté en la mesa. Cuando un jugador no pueda jugar las cartas que tiene en la mano tomará del mazo una carta, y 
- en el caso de poder jugarla, la echará; si no, perderá su turno. En el caso de que a un jugador le quede solo una carta y no 
- diga ¡Uno!, tendrá que robar 2 cartas más del mazo. Cuando un jugador se queda sin cartas, el juego termina y dicho jugador será 
+En cada turno, el jugador podra tirar una unica carta de entre las que tenga en su mano. Una carta puede ser jugada si coincide
+ en numero o en color con la carta que esta en la mesa. La carta especial +4 se puede tirar en cualquier momento independientemente 
+ de la carta que este en la mesa. Cuando un jugador no pueda jugar las cartas que tiene en la mano tomara del mazo una carta, y 
+ en el caso de poder jugarla, la echara; si no, perdera su turno. En el caso de que a un jugador le quede solo una carta y no 
+ diga Uno!, tendra que robar 2 cartas mas del mazo. Cuando un jugador se queda sin cartas, el juego termina y dicho jugador sera 
  el ganador de la partida.
 
 Fuentes:
 https://www.uno-juego.es/reglas-del-juego/
 https://es.wikipedia.org/wiki/Uno_(juego)
+
+Fuentes:
+https://www.uno-juego.es/reglas-del-juego/
+https://es.wikipedia.org/wiki/Uno_(juego)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
