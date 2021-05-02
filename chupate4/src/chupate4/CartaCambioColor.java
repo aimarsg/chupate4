@@ -14,9 +14,31 @@ public class CartaCambioColor extends Carta{
 	
 	public String preguntarColor() {
 		System.out.println("A que color quieres cambiar?");
+		boolean todoOk=false;	
 		String color =Teclado.getMiTeclado().leerString();
-		return color;
+		do {
+			try {
+				
+				
+				if(color!="azul" && color!="amarillo" && color!="rojo" && color!="verde") {
+					throw new ColorNoValido();
+				}
+				else {
+					todoOk=true;
+					
+					}
+			}
+			catch(ColorNoValido e) {
+				System.out.println("Escribe un color valido en minusculas");
+				color=Teclado.getMiTeclado().leerString();
+			}
+		}while(!todoOk);
+		return color;	
 	}
+
+		
+		
+	
 	public boolean sePuedeEchar() {
 		return (true);
 	}
