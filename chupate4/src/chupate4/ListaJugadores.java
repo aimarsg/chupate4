@@ -101,11 +101,14 @@ public class ListaJugadores {
 		return(this.buscarJugadorPorId(id));
 	}
 	public void cambiarSentido() {
-		if (this.sentido) {
-			this.sentido=false;
-		}
-		else {
-			this.sentido=true;
+		if (this.cantidadJugadores()>2){
+			if (this.sentido) {
+				this.sentido=false;
+			}else {
+				this.sentido=true;
+			}
+		}else {
+			this.saltarTurno();
 		}
 	}
 	public void saltarTurno() {
