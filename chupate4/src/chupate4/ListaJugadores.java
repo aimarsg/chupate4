@@ -1,8 +1,10 @@
 package chupate4;
 
 import java.util.ArrayList;
+
 import java.util.Iterator;
 
+import java.util.Random;
 public class ListaJugadores {
 	private ArrayList<Jugador> lista;
 	private static ListaJugadores miListaJugadores=null;
@@ -45,6 +47,9 @@ public class ListaJugadores {
 	public void jugarPartida() {
 		Jugador j;
 		boolean terminar=false;
+		int jugadores=ListaJugadores.getMiListaJugadores().cantidadJugadores();
+		Random r=new Random();
+		ListaJugadores.idJugadorActual=r.nextInt(jugadores)+1;
 		while (!terminar) {
 			j=this.buscarJugadorPorId(modulo(ListaJugadores.idJugadorActual));
 			try {

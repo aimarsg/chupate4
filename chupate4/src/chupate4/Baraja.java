@@ -209,4 +209,12 @@ public class Baraja {
 	public int cartasDisponibles() {
 		return((this.listaEchadas.cantidadCartas()-1)+this.listaInicial.cantidadCartas());
 	}
+	
+	//metodos solo para pruebas
+	public int cantidadCartasListaInicial() {
+		return this.listaInicial.cantidadCartas();
+	}
+	public void anadirCartaInicialParaPruebas(Carta pCarta) {
+		this.listaInicial.anadirCarta(pCarta);
+	}
 	}

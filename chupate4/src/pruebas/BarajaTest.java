@@ -12,6 +12,7 @@ import chupate4.*
 	Baraja b1;
 	Jugador j1,j2,j3,j4;
 	ListaJugadores l1;
+	CartaNormal c1,c2;
 	@Before
 	public void setUp() throws Exception {
 	j1=new Jugador("Alberto",1);
@@ -19,8 +20,8 @@ import chupate4.*
 	j3=new Jugador("Aleja",3);
 	j4=new Jugador("Alvaro",4);
 	
-
-	
+	c1=new CartaNormal("azul","8");
+	c2=new CartaNormal("amarillo","8");
 	
 	
 	}
@@ -31,31 +32,40 @@ import chupate4.*
 
 	@Test
 	public void testAnadirJugadores() {
-		int cuantos;
+		/* int cuantos;
 		cuantos=Baraja.getMiBaraja().preguntarNumJugadores();
 		
 		Baraja.getMiBaraja().anadirJugadores(cuantos);
-		
+		assertEquals(ListaJugadores.getMiListaJugadores().cantidadJugadores(),cuantos);
+		*/
 	}
 
 	@Test
 	public void testDarVueltaCartas() {
-		fail("Not yet implemented");
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(c1);
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(c2);
+		Baraja.getMiBaraja().darVueltaCartas();
+		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),2);
 	}
 
 	@Test
 	public void testRobar() {
-		fail("Not yet implemented");
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(c1);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(c2);
+		Baraja.getMiBaraja().robar();
+		Baraja.getMiBaraja().robar();
+		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),0);
 	}
 
 	@Test
 	public void testUltimaCarta() {
-		fail("Not yet implemented");
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(c1);
+		assertEquals(Baraja.getMiBaraja().ultimaCarta(),c1);
 	}
 
 	@Test
 	public void testJugarPartida() {
-		fail("Not yet implemented");
+		Baraja.getMiBaraja().jugarPartida();
 	}
 
 }
