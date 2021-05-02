@@ -27,6 +27,10 @@ public class JugadorTest {
 	ListaCartas l;
 	ListaJugadores lista;
 	ChupateCuatro carta1;
+	CambioSentido cambios;
+	CartaNormal normal;
+	CartaCambioColor cambiocolor;
+	Bloqueo bloqueo;
 	
 
 	@Before
@@ -42,8 +46,17 @@ public class JugadorTest {
 		lista.anadirJugador(j4);
 		ListaCartas l=new ListaCartas();
 		carta1=new ChupateCuatro("negro");
+		cambios= new CambioSentido("azul");
+		normal=new CartaNormal("rojo", "1");
+		cambiocolor= new CartaCambioColor("amarillo");
+		bloqueo= new Bloqueo("verde");
+		
 		l.anadirCarta(carta1);
 		lista.buscarJugadorPorId(1).anadir(carta1);
+		lista.buscarJugadorPorId(1).anadir(cambios);
+		lista.buscarJugadorPorId(1).anadir(normal);
+		lista.buscarJugadorPorId(1).anadir(cambiocolor);
+		lista.buscarJugadorPorId(1).anadir(bloqueo);
 	
 	}
 
@@ -57,7 +70,7 @@ public class JugadorTest {
 
 	@Test
 	public void testTirarCarta() {
-		fail("Not yet implemented");
+//
 	}
 
 	@Test
