@@ -66,7 +66,7 @@ public class CartaNormal extends Carta{
 		return mismo;
 	}
 	
-	public boolean tieneMismoNumero(Carta pCarta) {
+/*	public boolean tieneMismoNumero(Carta pCarta) {
 		boolean mismo=false;
 		if (pCarta instanceof CartaNormal) {
 			if (((CartaNormal)pCarta).tieneMismoNumero(this.numero)) {
@@ -74,6 +74,6 @@ public class CartaNormal extends Carta{
 				}
 			}
 		return mismo;
-		}
+		}*/
 	}
 
