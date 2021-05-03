@@ -74,12 +74,12 @@ public class ListaJugadoresTest {
 	}
 
 	@Test
-	public void testJugarPartida() {
+	public void testJugarPartida() {/*
 		Baraja.getMiBaraja().crearBaraja();
 		Baraja.getMiBaraja().barajear();
 		Baraja.getMiBaraja().repartir();
 		Baraja.getMiBaraja().sacarPrimeraCarta();
-		l1.jugarPartida();
+		l1.jugarPartida();*/
 	}
 
 	@Test
@@ -115,7 +115,25 @@ public class ListaJugadoresTest {
 		j5= l1.siguienteJugador();
 		assertTrue(j5.tieneEsteId(2));
 		
+		l1.cambiarSentido();
+		j5= l1.siguienteJugador();
+		assertTrue(j5.tieneEsteId(0));
 		
+		
+		l1.saltarTurno();
+		j5= l1.siguienteJugador();
+		assertTrue(j5.tieneEsteId(1));
+		
+		l1.eliminarJugador(j3);
+		l1.eliminarJugador(j4);
+		
+		l1.cambiarSentido();
+		j5= l1.siguienteJugador();
+		assertTrue(j5.tieneEsteId(0));
+		
+		l1.saltarTurno();
+		j5= l1.siguienteJugador();
+		assertTrue(j5.tieneEsteId(1));
 	}
 
 
