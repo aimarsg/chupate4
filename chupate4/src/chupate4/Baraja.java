@@ -200,6 +200,8 @@ public class Baraja {
 		Main.main(null);
 		}
 	
+	
+	//metodos solo para pruebas
 	public void escribirBaraja() {
 		this.listaInicial.escribirCartas();
 	}
@@ -211,7 +213,7 @@ public class Baraja {
 		return((this.listaEchadas.cantidadCartas()-1)+this.listaInicial.cantidadCartas());
 	}
 	
-	//metodos solo para pruebas
+	
 	public int cantidadCartasListaInicial() {
 		return this.listaInicial.cantidadCartas();
 	}
