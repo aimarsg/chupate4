@@ -14,7 +14,7 @@ public class Jugador {
 		this.mano= new ListaCartas();
 	}
 	
-	//otros metodos
+	//otros metodos/
 	
 	public void cogerCarta(int pCuantas) {
 		if(pCuantas>Baraja.getMiBaraja().cartasDisponibles()) {
