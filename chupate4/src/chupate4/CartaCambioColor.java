@@ -16,11 +16,12 @@ public class CartaCambioColor extends Carta{
 		System.out.println("A que color quieres cambiar?");
 		boolean todoOk=false;	
 		String color =Teclado.getMiTeclado().leerString();
-		do {
+		do {System.out.println();
+		
 			try {
 				
 				
-				if(color!="azul" && color!="amarillo" && color!="rojo" && color!="verde") {
+				if(!color.equals("azul") && !color.equals("amarillo") && !color.equals("rojo") && !color.equals("verde")) {
 					throw new ColorNoValido();
 				}
 				else {

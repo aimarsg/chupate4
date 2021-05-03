@@ -1,5 +1,6 @@
 package chupate4;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Teclado {
@@ -18,18 +19,34 @@ public class Teclado {
 	}
 	
 	public int leerEntero () {
-		int r = sc.nextInt();
+		int r=0;
+		boolean todoOK=true;
+		do{todoOK=true;
+			try{
 		
+			r = sc.nextInt();
+		}
+			catch(InputMismatchException e) {
+				System.out.println("El numero introducido no es valido por no ser un numero.");
+				System.out.println("Escribe otro numero:");
+				todoOK=false;
+			}
+		}while(todoOK==false);
 		sc.nextLine();
 		return r;
 	}
 	
 	public int leerEntero (int pDesde, int pHasta) {
-		int r = sc.nextInt();
-		boolean todoOk=false;
+		int r=0;
+		boolean todoOk=true;
+		
 		do{try {
+			r = sc.nextInt();
+			
+			todoOk=true;
+			
 			if (r>=pDesde && r<=pHasta) {
-				todoOk=true;
+				
 			}
 			else {
 				throw new NumeroFueraDeRangoException();
@@ -37,10 +54,19 @@ public class Teclado {
 			}
 		
 		catch(NumeroFueraDeRangoException e){
+			todoOk=false;
 			System.out.println("El numero introducido no esta entre " + pDesde +" y "+ pHasta + ".");
 			System.out.println("Escribe otro numero:");
-			r=sc.nextInt();
+			
+			
 		}
+		catch(InputMismatchException e) {
+			todoOk=false;
+			System.out.println("El numero introducido no es valido por no ser un numero.");
+			System.out.println("Escribe otro numero:");
+			sc.nextLine();
+		}
+		
 		}
 		while(!todoOk);
 		

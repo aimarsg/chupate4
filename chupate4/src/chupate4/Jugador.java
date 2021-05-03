@@ -39,8 +39,10 @@ public class Jugador {
 		boolean tirada=false;
 		System.out.println("Escribe la posicion de la carta que quieras tirar");
 		cartaString=Teclado.getMiTeclado().leerString();
+		
 			
 		do {
+			System.out.println();
 			try {
 				int pos=0;
 				String numero="";
@@ -92,8 +94,10 @@ public class Jugador {
 			}catch(PosicionNoValida e) {
 				 System.out.println("No has escrito un numero, escribe un numero: ");
 				 cartaString=Teclado.getMiTeclado().leerString();
+				
 			}catch(CartaNoSePuedeTirarException e) {
 				System.out.println("La carta que esta en la posicion introducida no se puede tirar, escribe otra posicion: ");
+				
 				cartaString=Teclado.getMiTeclado().leerString();
 			}catch(NumeroFueraDeRangoException e) {
 				System.out.println("En tu mano tienes "+this.cantidadCartas()+", escibe un numero menor o igual que "+this.cantidadCartas());
@@ -163,6 +167,7 @@ public class Jugador {
 		System.out.println("Tienes "+this.cantidadCartas()+" cartas: ");
 		System.out.println();
 		this.escribirMano();
+		System.out.println();
 		if (!this.puedeEcharCarta()) {
 			System.out.println();
 			System.out.println("No puedes tirar ninguna de las cartas que tienes en tu mano, robas 1");

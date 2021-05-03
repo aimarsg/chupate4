@@ -197,6 +197,7 @@ public class Baraja {
 		Baraja.getMiBaraja().listaEchadas=new ListaCartas();
 		Baraja.getMiBaraja().listaInicial=new ListaCartas();
 		ListaJugadores.getMiListaJugadores().resetearListaJugadores();
+		Main.main(null);
 		}
 	
 	public void escribirBaraja() {
