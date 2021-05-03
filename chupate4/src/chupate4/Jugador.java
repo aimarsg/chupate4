@@ -70,7 +70,7 @@ public class Jugador {
 					}
 			      }
 				if (!todoNumeros||numero=="") {
-					throw new PosicionNoValida();
+					throw new PosicionNoValidaException();
 				}else {
 					if (this.cantidadCartas()<Integer.parseInt(numero)) {
 							throw new NumeroFueraDeRangoException();
@@ -91,7 +91,7 @@ public class Jugador {
 							}
 						}
 					}
-			}catch(PosicionNoValida e) {
+			}catch(PosicionNoValidaException e) {
 				 System.out.println("No has escrito un numero, escribe un numero: ");
 				 cartaString=Teclado.getMiTeclado().leerString();
 				

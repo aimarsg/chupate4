@@ -22,14 +22,14 @@ public class CartaCambioColor extends Carta{
 				
 				
 				if(!color.equals("azul") && !color.equals("amarillo") && !color.equals("rojo") && !color.equals("verde")) {
-					throw new ColorNoValido();
+					throw new ColorNoValidoException();
 				}
 				else {
 					todoOk=true;
 					
 					}
 			}
-			catch(ColorNoValido e) {
+			catch(ColorNoValidoException e) {
 				System.out.println("Escribe un color valido en minusculas");
 				color=Teclado.getMiTeclado().leerString();
 			}

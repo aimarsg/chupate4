@@ -8,7 +8,7 @@ import chupate4.ChupateCuatro;
 import chupate4.ChupateDos;
 import chupate4.EspecialesColor;
 import chupate4.CambioSentido;
-import chupate4.PosicionNoValida;
+import chupate4.PosicionNoValidaException;
 import chupate4.Baraja;
 import chupate4.Teclado;
 import static org.junit.Assert.*;
