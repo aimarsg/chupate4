@@ -16,6 +16,7 @@ public class ListaCartasTest {
 	Bloqueo b1,b2,b3;
 	ChupateCuatro cc4;
 	ChupateDos cc21,cc22,cc23;
+	Jugador j1,j2,j3,j4;
 	@Before
 	public void setUp() throws Exception {
 		l1=new ListaCartas();
@@ -49,6 +50,9 @@ public class ListaCartasTest {
 		l1.anadirCarta(cc21);
 		l1.anadirCarta(cc22);
 		l1.anadirCarta(cc23);
+		j1=new Jugador("Adrian", 0);
+		j2=new Jugador("Iker", 1);
+		j3=new Jugador("Aimar", 2);
 	}
 
 	@After
@@ -90,6 +94,39 @@ public class ListaCartasTest {
 		l1.buscarCarta("9").escribirCarta();
 		assertEquals(l1.buscarCarta("12"),cc4);
 		l1.buscarCarta("12").escribirCarta();		
+	}
+	@Test
+	public void testTirarCarta() {
+		ListaJugadores.getMiListaJugadores().anadirJugador(j1);
+		ListaJugadores.getMiListaJugadores().anadirJugador(j2);
+		ListaJugadores.getMiListaJugadores().anadirJugador(j3);
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(c3);
+		//c4.tirarCarta(); //no tiene que ocurrir nada
+		Baraja.getMiBaraja().echarCarta(c4);
+		assertEquals(Baraja.getMiBaraja().ultimaCarta(),c4);
+		//ccc.tirarCarta();//tiene que preguntar el color //PONER ROJO
+		Baraja.getMiBaraja().echarCarta(ccc);
+		assertTrue(Baraja.getMiBaraja().ultimaCarta().tieneMismoColor("rojo"));//comprueba si se ha cambiado el color
+		assertEquals(ListaJugadores.getMiListaJugadores().siguienteJugador(),j2);
+		cs2.tirarCarta();
+		assertEquals(ListaJugadores.getMiListaJugadores().siguienteJugador(),j3); //se ha cambiado el sentido7
+		b1.tirarCarta();
+		assertEquals(ListaJugadores.getMiListaJugadores().siguienteJugador(),j2);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(b1);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(b2);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(b3);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(c1);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(c2);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(c3);
+		cc4.tirarCarta();
+		assertEquals(j2.cantidadCartas(),4);
+		
+		
+		assertEquals(ListaJugadores.getMiListaJugadores().siguienteJugador(),j1);
+		cc22.tirarCarta();
+		
+		assertEquals(j1.cantidadCartas(),2);
+		assertEquals(ListaJugadores.getMiListaJugadores().siguienteJugador(),j3);
 	}
 
 }
