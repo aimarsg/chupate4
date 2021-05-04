@@ -204,6 +204,11 @@ public class Baraja {
 		Main.main(null);
 		}
 	
+	public int cartasDisponibles() {
+		return((this.listaEchadas.cantidadCartas()-1)+this.listaInicial.cantidadCartas());
+	}
+	
+	
 	
 	//metodos solo para pruebas
 	public void escribirBaraja() {
@@ -222,15 +227,15 @@ public class Baraja {
 		this.listaEchadas=new ListaCartas();
 	}
 	
-	public int cartasDisponibles() {
-		return((this.listaEchadas.cantidadCartas()-1)+this.listaInicial.cantidadCartas());
-	}
-	
-	
 	public int cantidadCartasListaInicial() {
 		return this.listaInicial.cantidadCartas();
 	}
 	public void anadirCartaInicialParaPruebas(Carta pCarta) {
 		this.listaInicial.anadirCarta(pCarta);
 	}
+	public void terminarPartidaParaPruebas() {
+		Baraja.getMiBaraja().listaEchadas=new ListaCartas();
+		Baraja.getMiBaraja().listaInicial=new ListaCartas();
+		ListaJugadores.getMiListaJugadores().resetearListaJugadores();
+		}
 	}

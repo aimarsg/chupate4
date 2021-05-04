@@ -59,6 +59,14 @@ import chupate4.*
 		Baraja.getMiBaraja().robar();
 		Baraja.getMiBaraja().robar();
 		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),0);
+		
+		
+		Baraja.getMiBaraja().resetearListas();
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(cc4);
+		assertEquals(Baraja.getMiBaraja().cartasDisponibles(), 0);
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(c1);
+		assertEquals(Baraja.getMiBaraja().cartasDisponibles(), 1);
+		assertEquals(Baraja.getMiBaraja().robar(),cc4);
 	}
 
 	@Test
@@ -86,8 +94,13 @@ import chupate4.*
 		
 		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),2);
 		assertTrue(Baraja.getMiBaraja().ultimaCarta() instanceof CartaNormal);
-		
-		
+	}
+	@Test
+	public void terminarPartida() {
+		Baraja.getMiBaraja().terminarPartidaParaPruebas();//verificar que las listas estan vacias
+		assertEquals(ListaJugadores.getMiListaJugadores().cantidadJugadores(),0);
+		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),0);
+		assertEquals(Baraja.getMiBaraja().cartasDisponibles(),-1);// es -1 porque el metodo hace 0-1+0=-1
 		
 	}
 

@@ -33,13 +33,13 @@ public class ChupateCuatro extends CartaCambioColor {
 		
 	public void escribirCarta() {
 		AnsiConsole.systemInstall();
-		if(super.getColor()=="rojo") {
+		if(super.getColor().equals("rojo")) {
 			 	System.out.print(ansi().bg(Color.RED).a("+4").reset()+" ");
-			}else if(super.getColor()=="amarillo") {
+			}else if(super.getColor().equals("amarillo")) {
 				System.out.print(ansi().bg(Color.YELLOW).a("+4").reset()+" ");
-			}else if(super.getColor()=="azul") {
+			}else if(super.getColor().equals("azul")) {
 				System.out.print(ansi().bg(Color.BLUE).a("+4").reset()+" ");
-			}else if(super.getColor()=="verde"){
+			}else if(super.getColor().equals("verde")){
 				System.out.print(ansi().bg(Color.GREEN).a("+4").reset()+" ");
 			}else {
 				System.out.print(ansi().bg(Color.WHITE).fg(Color.BLACK).a("+4").reset()+" ");
