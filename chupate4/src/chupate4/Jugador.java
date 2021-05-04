@@ -60,7 +60,7 @@ public class Jugador {
 				if (numero.length()!=0) {
 					int i = 0 ;  
 					while(i<pos&&todoNumeros){           
-						if (numero.charAt(i) >= '1' && numero.charAt(i) <= '9') {
+						if (numero.charAt(i) >= '0' && numero.charAt(i) <= '9') {
 							todoNumeros= true;
 						}
 						else {	
@@ -72,7 +72,7 @@ public class Jugador {
 				if (!todoNumeros||numero=="") {
 					throw new PosicionNoValidaException();
 				}else {
-					if (this.cantidadCartas()<Integer.parseInt(numero)) {
+					if ((Integer.parseInt(numero)==0)||this.cantidadCartas()<Integer.parseInt(numero)) {
 							throw new NumeroFueraDeRangoException();
 						}
 						else {
@@ -100,7 +100,7 @@ public class Jugador {
 				
 				cartaString=Teclado.getMiTeclado().leerString();
 			}catch(NumeroFueraDeRangoException e) {
-				System.out.println("En tu mano tienes "+this.cantidadCartas()+", escibe un numero menor o igual que "+this.cantidadCartas());
+				System.out.println("En tu mano tienes "+this.cantidadCartas()+", escibe un numero menor o igual que "+this.cantidadCartas()+" y mayor que 0.");
 				cartaString=Teclado.getMiTeclado().leerString();
 			}catch(CartaNoEstaEnManoException e){
 				System.out.println("La carta introducida no esta en mano, escribe otra");
