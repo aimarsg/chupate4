@@ -67,6 +67,7 @@ import chupate4.*
 		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(c1);
 		assertEquals(Baraja.getMiBaraja().cartasDisponibles(), 1);
 		assertEquals(Baraja.getMiBaraja().robar(),cc4);
+		assertEquals(Baraja.getMiBaraja().ultimaCarta(),c1);
 	}
 
 	@Test

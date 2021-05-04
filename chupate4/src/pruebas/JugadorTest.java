@@ -23,7 +23,7 @@ import chupate4.Jugador;
 import chupate4.ListaJugadores;
 
 public class JugadorTest {
-	Jugador j1,j2,j3,j4;
+	Jugador j1,j2,j3,j4,j8085;
 	ListaCartas l;
 	ListaJugadores lista;
 	ChupateCuatro carta1;
@@ -40,6 +40,7 @@ public class JugadorTest {
 		 j2=new Jugador("Juan2",2);
 		 j3=new Jugador("Juan3",3);
 		 j4=new Jugador("Juan4",4);
+		 j8085=new Jugador("jose",5);
 		lista.anadirJugador(j1);
 		lista.anadirJugador(j2);
 		lista.anadirJugador(j3);
@@ -56,7 +57,7 @@ public class JugadorTest {
 		lista.buscarJugadorPorId(1).anadir(cambios);
 		lista.buscarJugadorPorId(1).anadir(normal);
 		lista.buscarJugadorPorId(1).anadir(cambiocolor);
-		lista.buscarJugadorPorId(1).anadir(bloqueo);
+		lista.buscarJugadorPorId(2).anadir(bloqueo);
 	
 	}
 
@@ -69,18 +70,27 @@ public class JugadorTest {
 	}
 
 	@Test
-	public void testTirarCarta() {
+	public void jugarTurno() throws InterruptedException {
+		assertEquals(j8085.cantidadCartas(),0);
+		j8085.anadir(cambios);
+		Baraja.getMiBaraja().resetearListas();
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(normal);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(bloqueo);
+		j8085.jugarTurno();
 //
 	}
 
 	@Test
 	public void testDecirUno() {
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(bloqueo);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(normal);
 		j1.decirUno("1 dos");
-		assertTrue(lista.buscarJugadorPorId(1).cantidadCartas()==3);
+		assertEquals(lista.buscarJugadorPorId(1).cantidadCartas(),4);
 		lista.buscarJugadorPorId(2).anadir(carta1);
 		j2.decirUno("1 uno");
-		assertTrue(lista.buscarJugadorPorId(1).cantidadCartas()==1);
-		
+		assertEquals(lista.buscarJugadorPorId(1).cantidadCartas(),1);
+		j2.decirUno("1");
+		assertEquals(lista.buscarJugadorPorId(1).cantidadCartas(),3);
 	}
 
 	@Test

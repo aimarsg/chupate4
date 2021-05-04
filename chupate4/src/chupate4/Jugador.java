@@ -60,7 +60,7 @@ public class Jugador {
 				if (numero.length()!=0) {
 					int i = 0 ;  
 					while(i<pos&&todoNumeros){           
-						if (numero.charAt(i) >= '0' && numero.charAt(i) <= '9') {
+						if (numero.charAt(i) >= '1' && numero.charAt(i) <= '9') {
 							todoNumeros= true;
 						}
 						else {	
