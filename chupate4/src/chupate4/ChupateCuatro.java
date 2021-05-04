@@ -13,6 +13,9 @@ public class ChupateCuatro extends CartaCambioColor {
 	}
 
 	public void tirarCarta(){
+		System.out.print("[ ");
+		this.escribirCarta();
+		System.out.println("]");
 		String nColor=this.preguntarColor();
 		this.setColor(nColor);
 		System.out.print("[ ");
