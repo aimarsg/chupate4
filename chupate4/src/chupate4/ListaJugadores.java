@@ -55,8 +55,10 @@ public class ListaJugadores {
 			try {
 				terminar=j.jugarTurno();
 				if (terminar) {
+					System.out.println();
+					System.out.println();
+					System.out.println("Ha ganado "+j.getNombre()+" !!!!! ENHORABUENAAAA!!!!");
 					Baraja.getMiBaraja().terminarPartida();
-					System.out.println("Ha ganado "+j.getNombre());
 				}
 				if (sentido) {//esta comprobacion es para cuando implementemos la carta especial de cambio de sentido
 					ListaJugadores.idJugadorActual=ListaJugadores.idJugadorActual+1;

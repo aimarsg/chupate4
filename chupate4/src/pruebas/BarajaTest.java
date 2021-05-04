@@ -6,13 +6,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import chupate4.Baraja;
 import chupate4.*
 ;public class BarajaTest {
 	Baraja b1;
 	Jugador j1,j2,j3,j4;
 	ListaJugadores l1;
-	CartaNormal c1,c2;
+	CartaNormal c1,c2,c3;
+	ChupateCuatro cc4;
 	@Before
 	public void setUp() throws Exception {
 	j1=new Jugador("Alberto",1);
@@ -22,12 +22,15 @@ import chupate4.*
 	
 	c1=new CartaNormal("azul","8");
 	c2=new CartaNormal("amarillo","8");
+	c3=new CartaNormal("verde", "6");
+	cc4=new ChupateCuatro("negro");
 	
 	
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		Baraja.getMiBaraja().resetearListas();
 	}
 
 	@Test
@@ -44,8 +47,9 @@ import chupate4.*
 	public void testDarVueltaCartas() {
 		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(c1);
 		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(c2);
+		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),0);
 		Baraja.getMiBaraja().darVueltaCartas();
-		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),2);
+		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),1);
 	}
 
 	@Test
@@ -63,9 +67,28 @@ import chupate4.*
 		assertEquals(Baraja.getMiBaraja().ultimaCarta(),c1);
 	}
 
+	
 	@Test
-	public void testJugarPartida() {
-		Baraja.getMiBaraja().jugarPartida();
+	public void testSacarPrimeraCarta() {
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(c1);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(c2);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(cc4);
+		Baraja.getMiBaraja().sacarPrimeraCarta();
+		
+		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),1);
+		assertTrue(Baraja.getMiBaraja().ultimaCarta() instanceof CartaNormal);
+		
+		Baraja.getMiBaraja().eliminarUnaCartaEchadaParaPruebas(c2);
+		Baraja.getMiBaraja().eliminarUnaCartaEchadaParaPruebas(cc4);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(cc4);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(c3);
+		Baraja.getMiBaraja().sacarPrimeraCarta();
+		
+		assertEquals(Baraja.getMiBaraja().cantidadCartasListaInicial(),2);
+		assertTrue(Baraja.getMiBaraja().ultimaCarta() instanceof CartaNormal);
+		
+		
+		
 	}
 
 }

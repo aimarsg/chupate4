@@ -164,6 +164,11 @@ public class Jugador {
 		System.out.println("==================================================");
 		System.out.println();
 		System.out.println("Es el turno de "+this.nombre+".");
+		System.out.println("Esta es la ultima carta echada:");
+		System.out.print("[ ");
+		Baraja.getMiBaraja().ultimaCarta().escribirCarta();
+		System.out.println("]");
+		System.out.println();
 		System.out.println("Tienes "+this.cantidadCartas()+" cartas: ");
 		System.out.println();
 		this.escribirMano();

@@ -187,16 +187,20 @@ public class Baraja {
 		Carta primeraCarta=this.listaInicial.ultimaCarta();
 		while (!(primeraCarta instanceof CartaNormal)) {
 			this.listaEchadas.anadirCarta(primeraCarta);
-			this.listaEchadas.eliminarCarta(primeraCarta);
+			this.listaInicial.eliminarCarta(primeraCarta);
 			primeraCarta=this.listaInicial.ultimaCarta();
 		}
 		System.out.println("La partida empieza con esta carta:  ");
 		this.echarCarta(primeraCarta);
+		this.listaInicial.eliminarCarta(primeraCarta);
 	}
 	public void terminarPartida() {
 		Baraja.getMiBaraja().listaEchadas=new ListaCartas();
 		Baraja.getMiBaraja().listaInicial=new ListaCartas();
 		ListaJugadores.getMiListaJugadores().resetearListaJugadores();
+		System.out.println();
+		System.out.println("Para volver a jugar, pulse intro.");
+		Teclado.getMiTeclado().leerString();
 		Main.main(null);
 		}
 	
@@ -207,6 +211,15 @@ public class Baraja {
 	}
 	public void anadirUnaCartaEchadaParaPruebas(Carta pCarta) {
 		this.listaEchadas.anadirCarta(pCarta);
+	}
+	
+	public void eliminarUnaCartaEchadaParaPruebas(Carta pCarta) {
+		this.listaEchadas.eliminarCarta(pCarta);
+	}
+	
+	public void resetearListas() {
+		this.listaInicial=new ListaCartas();
+		this.listaEchadas=new ListaCartas();
 	}
 	
 	public int cartasDisponibles() {
