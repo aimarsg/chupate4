@@ -82,15 +82,14 @@ public class JugadorTest {
 
 	@Test
 	public void testDecirUno() {
-		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(bloqueo);
-		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(normal);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(carta1);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(cambios);
 		j1.decirUno("1 dos");
 		assertEquals(lista.buscarJugadorPorId(1).cantidadCartas(),4);
-		lista.buscarJugadorPorId(2).anadir(carta1);
 		j2.decirUno("1 uno");
-		assertEquals(lista.buscarJugadorPorId(1).cantidadCartas(),1);
+		assertEquals(lista.buscarJugadorPorId(2).cantidadCartas(),1);
 		j2.decirUno("1");
-		assertEquals(lista.buscarJugadorPorId(1).cantidadCartas(),3);
+		assertEquals(lista.buscarJugadorPorId(2).cantidadCartas(),3);
 	}
 
 	@Test
