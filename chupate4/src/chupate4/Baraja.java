@@ -211,6 +211,8 @@ public class Baraja {
 	
 	
 	//metodos solo para pruebas
+	
+
 	public void escribirBaraja() {
 		this.listaInicial.escribirCartas();
 	}
@@ -239,3 +241,5 @@ public class Baraja {
 		ListaJugadores.getMiListaJugadores().resetearListaJugadores();
 		}
 	}
+	
+	
