@@ -99,6 +99,19 @@ public class ListaJugadoresTest {
 		assertNotNull(ListaJugadores.getMiListaJugadores());
 	}
 
+	@Test
+	public void testJugadorSeQuedaSinCartas() {
+		CartaNormal carta;
+		carta=new CartaNormal("azul", "8");
+		
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(carta);
+		l1.resetearListaJugadores();
+		l1.anadirJugador(j4);
+		ChupateCuatro pCarta;
+		pCarta= new ChupateCuatro("negro");
+		j4.anadir(pCarta);
+		l1.jugarPartida();
+	}
 
 	@Test
 	public void testSiguienteJugadorYCambiarSentidoYSaltarTurno() {
