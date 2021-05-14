@@ -99,17 +99,18 @@ public class ListaJugadoresTest {
 		assertNotNull(ListaJugadores.getMiListaJugadores());
 	}
 
-	@Test
+	//@Test
 	public void testJugadorSeQuedaSinCartas() {
 		CartaNormal carta;
 		carta=new CartaNormal("azul", "8");
 		
 		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(carta);
 		l1.resetearListaJugadores();
-		l1.anadirJugador(j4);
+		l1.anadirJugador(j1);
+		l1.anadirJugador(j2);
 		ChupateCuatro pCarta;
 		pCarta= new ChupateCuatro("negro");
-		j4.anadir(pCarta);
+		j1.anadir(pCarta);
 		l1.jugarPartida();
 	}
 
@@ -149,11 +150,46 @@ public class ListaJugadoresTest {
 		assertTrue(j5.tieneEsteId(1));
 	}
 
+	
+	
+	
 
 	@Test
 	public void testResetearListaJugadores() {
 		l1.resetearListaJugadores();
 		assertEquals(l1.cantidadJugadores(),0);
 	}
-
+	@Test
+	public void robaYNoPuede () {
+		l1.resetearListaJugadores();
+		CartaNormal carta,carta1,cartaJ;
+		carta=new CartaNormal("azul", "8");
+		carta1=new CartaNormal("roja","1");
+		cartaJ=new CartaNormal("amarillo","2");
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(carta);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(carta1);
+		l1.anadirJugador(j1);
+		l1.anadirJugador(j2);
+		j1.anadir(cartaJ);
+		l1.jugarPartida();
+			
+	}
+	@Test
+	public void noHayCartasParaRobar() {
+		l1.resetearListaJugadores();
+		CartaNormal carta,carta1,cartaJ;
+		carta=new CartaNormal("azul", "8");
+		carta1=new CartaNormal("roja","1");
+		cartaJ=new CartaNormal("amarillo","2");
+		CartaNormal carta2=new CartaNormal("amarillo","3");
+		ChupateCuatro carta4=new ChupateCuatro("negro");
+		Baraja.getMiBaraja().anadirUnaCartaEchadaParaPruebas(carta);
+		Baraja.getMiBaraja().anadirCartaInicialParaPruebas(carta1);	
+		j1.anadir(carta4);
+		j1.anadir(carta2);
+		j2.anadir(cartaJ);
+		l1.anadirJugador(j1);
+		l1.anadirJugador(j2);
+		l1.jugarPartida();
+	}
 }
